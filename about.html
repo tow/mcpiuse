@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - MCP I Use</title>
+    <meta name="description" content="Learn about the purpose, scope, and maintainer of MCP I Use, a reference tracking real-world MCP client support.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><a href="/">MCP I Use</a></h1>
+        </div>
+        <nav>
+            <a href="/about">About</a>
+            <a href="/#plugins">LLM Plugins</a>
+            <a href="/#features">MCP Support</a>
+            <a href="/#changelog">Changelog</a>
+            <a href="https://github.com/tow/mcpiuse" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro about-intro">
+            <h2>About MCP I Use</h2>
+            <p><strong>MCP I Use</strong> is a reference for how Model Context Protocol (MCP) features are supported across different client environments.</p>
+            <p>MCP defines a standard set of capabilities for servers (external tools) to expose &mdash; tools, resources, prompts, sampling, elicitation, and roots. In practice, most clients (AI assistants) support only a subset of these features, and behaviour varies by environment.</p>
+            <p>This site collects compatibility information so it is easier to see what a given client can actually do before depending on those features in MCP servers or workflows.</p>
+        </section>
+
+        <hr class="content-separator">
+
+        <section>
+            <h2>Purpose</h2>
+            <p>Software engineering is shifting from "<i>write code in an editor</i>" to "<i>work inside an AI-augmented environment that understands code, systems, and process</i>". The hard part is no longer producing streams of characters: but doing so in the right context, which means access to tickets, repositories, documentation, environments, deployment pipelines, operational logs, ... . Model Context Protocol (MCP) is the plumbing layer for acquiring and managing that context: the standard way to expose tools and data to AI assistants.</p>
+
+            <p>For most engineers, the "AI assistant" is actually embedded in their developer environment: IDEs, editors, and CLI tools attached to LLMs. As we experiment with new workflows, managing our context more and more efficiently, the quality and flexibility of this plumbing determines what is actually possible. If an environment only supports a narrow subset of MCP features, there's things you just can't do; if support is richer and more consistent, it becomes much easier to design useful, repeatable patterns.</p>
+
+             <p> Understanding which MCP capabilities are available in which environments is key for evolving how software engineering is done.</p>
+        </section>
+
+        <hr class="content-separator">
+
+        <section>
+            <h2>Scope</h2>
+            <p>The site focuses on MCP clients that are commonly used in software engineering contexts, such as:</p>
+            <ul>
+                <li>IDEs and editors connected to LLMs via plugins or built-in assistants</li>
+                <li>CLI tools and terminals that speak MCP</li>
+                <li>Desktop or local assistants that developers run alongside other tools</li>
+            </ul>
+            <p>The aim is not to catalogue every experimental or internal MCP integration, but to cover the environments most likely to be used in modern software development.</p>
+        </section>
+
+        <hr class="content-separator">
+
+        <section>
+            <h2>What is tracked</h2>
+            <p>LLM plugin support for the most common IDE/CLI tools.</p>
+            <ul>
+                <li>IDE / editor or host application</li>
+                <li>Plugin or assistant used</li>
+                <li>Relevant version notes when behaviour changes over time</li>
+            </ul>
+
+            <h3>MCP feature support</h3>
+            <p>For each developer interface/plugin combination: whch of the standard MCP capabilities is supported:</p>
+            <ul>
+                <li>Tools</li>
+                <li>Resources</li>
+                <li>Prompts</li>
+                <li>Sampling</li>
+                <li>Elicitation</li>
+                <li>Roots</li>
+            </ul>
+
+            <h3>Configuration</h3>
+            <ul>
+                <li>Where configuration is stored (files, directories, UI settings)</li>
+                <li>Configuration format (JSON, YAML, TOML, UI-only, etc.)</li>
+                <li>Notable behaviours such as hot reload, multi-server support, or required restarts</li>
+            </ul>
+
+            <h3>Changes and quirks</h3>
+            <p>Any important version-specific behaviour, limitations, or non-standard interpretations of the protocol that are useful when designing servers. Entries are updated over time as clients evolve and expand their MCP feature support.</p>
+        </section>
+
+        <hr class="content-separator">
+
+        <section>
+            <h2>Maintainer</h2>
+            <p>MCP I Use is maintained by <a href="https://www.taivala.com" target="_blank" rel="noopener">Taivala</a>.</p>
+            <p>Taivala works with software organisations on AI-assisted engineering workflows, including the use of MCP to connect AI assistants with existing systems such as issue trackers, repositories, documentation and deployment tooling.</p>
+            <p>A clearer view of MCP client behaviour is useful when designing those workflows, and this site originated as a way to keep that information organised. It is published publicly in the hope that it is useful to others working with MCP.</p>
+            <p>Further information about Taivala can be found at <strong><a href="https://www.taivala.com" target="_blank" rel="noopener">taivala.com</a></strong>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Data is community-maintained.
+            <a href="https://github.com/tow/mcpiuse" target="_blank" rel="noopener">Contribute on GitHub</a>.
+        </p>
+        <p>
+            <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener">MCP Specification</a> |
+            <a href="https://modelcontextprotocol.io/clients" target="_blank" rel="noopener">Official MCP Clients List</a>
+        </p>
+        <p>
+            <a href="https://www.taivala.com" target="_blank" rel="noopener">Taivala</a> &mdash; MCP governance and LLM context management.
+        </p>
+    </footer>
+</body>
+</html>

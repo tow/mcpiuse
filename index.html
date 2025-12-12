@@ -13,33 +13,29 @@
             <h1><a href="/">MCP I Use</a></h1>
         </div>
         <nav>
-            <a href="#plugins">LLM Plugins</a>
-            <a href="#features">MCP Support</a>
-            <a href="#changelog">Changelog</a>
-            <a href="https://github.com/anthropics/mcpiuse" target="_blank" rel="noopener">GitHub</a>
+            <a href="/about.html">About</a>
+            <a href="/#plugins">LLM Plugins</a>
+            <a href="/#features">MCP Support</a>
+            <a href="/#changelog">Changelog</a>
+            <a href="https://github.com/tow/mcpiuse" target="_blank" rel="noopener">GitHub</a>
         </nav>
     </header>
 
     <main>
         <section id="intro" class="intro">
+            <p>Model Context Protocol (MCP) is an open standard for connecting AI assistants to external tools and data sources.</p>
             <p>
-                <strong>Model Context Protocol (MCP)</strong> is an open standard for connecting AI assistants to external data sources and tools.
-                This site tracks which IDEs and AI assistants support MCP, and which MCP features they implement.
+                MCP defines a clear set of standard capabilities for servers (external tools) to expose &mdash; tools, resources, prompts, sampling, elicitation,
+                and roots &mdash; but most clients (AI assistants) only support a subset of these features.
             </p>
             <p>
-                Not all MCP clients are equal &mdash; some support tools but not resources, others lack sampling or elicitation.
-                Use these tables to find out what works in your environment before building or adopting MCP servers.
+                In the software engineering world, the clients that matter most are IDEs and CLI tools attached to LLMs, and the picture is messy. VS Code with GitHub
+                Copilot supports a different set of MCP features than VS Code with CLINE, which again differs from JetBrains or terminal-based setups.
             </p>
-        </section>
-
-        <section id="legend" class="legend">
-            <h2>Legend</h2>
-            <div class="legend-items">
-                <span class="legend-item"><span class="support-icon support-y">&#10003;</span> Supported</span>
-                <span class="legend-item"><span class="support-icon support-a">~</span> Partial</span>
-                <span class="legend-item"><span class="support-icon support-n">&#10005;</span> Not supported</span>
-                <span class="legend-item"><span class="support-icon support-u">?</span> Unknown</span>
-            </div>
+            <p>
+                <strong>MCP I Use</strong> collects compatibility tables for these environments, so it’s easy to see which MCP features are available before relying
+                on them in MCP servers or workflows.
+            </p>
         </section>
 
         <section id="plugins">
@@ -57,7 +53,6 @@
             <h2>MCP Features</h2>
             <p class="section-description">
                 Feature support varies by IDE and AI assistant combination.
-                Even if an MCP server supports a feature, the client must also support it.
             </p>
             <div id="features-matrix" class="matrix-container">
                 <p class="loading">Loading feature data...</p>
