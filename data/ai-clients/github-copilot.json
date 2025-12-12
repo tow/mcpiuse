@@ -1,0 +1,14 @@
+{
+  "id": "github-copilot",
+  "name": "GitHub Copilot",
+  "vendor": "GitHub / Microsoft",
+  "website": "https://github.com/features/copilot",
+  "docs": "https://docs.github.com/en/copilot",
+  "compatible_ides": ["vscode", "visual-studio", "jetbrains", "xcode", "neovim", "emacs"],
+  "notes": {
+    "1": "Full MCP spec support in VS Code since June 2025",
+    "2": "Full MCP spec support in Visual Studio since Sept 2025",
+    "3": "Tools only in Xcode (no resources, prompts, or sampling)",
+    "4": "Available for Neovim/Vim via copilot.vim"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "avante",
+  "name": "Avante.nvim",
+  "vendor": "Community",
+  "website": "https://github.com/yetone/avante.nvim",
+  "docs": "https://github.com/yetone/avante.nvim#readme",
+  "compatible_ides": ["neovim"],
+  "notes": {
+    "1": "Cursor-like AI experience for Neovim",
+    "2": "MCP support via mcphub.nvim"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "firebase-studio",
+  "name": "Firebase Studio",
+  "vendor": "Google",
+  "category": "cloud-ide",
+  "website": "https://idx.dev",
+  "mcp_docs": null,
+  "config_paths": [],
+  "min_mcp_version": null,
+  "compatible_ai_clients": ["native"],
+  "notes": {
+    "1": "Formerly Project IDX",
+    "2": "Cloud-based IDE with Gemini built-in",
+    "3": "Browser-based, runs on Google Cloud"
+  }
+}

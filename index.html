@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP I Use - MCP Client Compatibility Tables</title>
+    <meta name="description" content="Compatibility tables for MCP (Model Context Protocol) support across IDEs and AI assistants. Find out which MCP features work in your development environment.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1><a href="/">MCP I Use</a></h1>
+        </div>
+        <nav>
+            <a href="#plugins">LLM Plugins</a>
+            <a href="#features">MCP Support</a>
+            <a href="#changelog">Changelog</a>
+            <a href="https://github.com/anthropics/mcpiuse" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro" class="intro">
+            <p>
+                <strong>Model Context Protocol (MCP)</strong> is an open standard for connecting AI assistants to external data sources and tools.
+                This site tracks which IDEs and AI assistants support MCP, and which MCP features they implement.
+            </p>
+            <p>
+                Not all MCP clients are equal &mdash; some support tools but not resources, others lack sampling or elicitation.
+                Use these tables to find out what works in your environment before building or adopting MCP servers.
+            </p>
+        </section>
+
+        <section id="legend" class="legend">
+            <h2>Legend</h2>
+            <div class="legend-items">
+                <span class="legend-item"><span class="support-icon support-y">&#10003;</span> Supported</span>
+                <span class="legend-item"><span class="support-icon support-a">~</span> Partial</span>
+                <span class="legend-item"><span class="support-icon support-n">&#10005;</span> Not supported</span>
+                <span class="legend-item"><span class="support-icon support-u">?</span> Unknown</span>
+            </div>
+        </section>
+
+        <section id="plugins">
+            <h2>LLM Plugin Availability</h2>
+            <p class="section-description">
+                Which LLM plugins are available for each developer interface.
+                Some interfaces have built-in AI (native), others support third-party plugins.
+            </p>
+            <div id="plugins-matrix" class="matrix-container">
+                <p class="loading">Loading plugin data...</p>
+            </div>
+        </section>
+
+        <section id="features">
+            <h2>MCP Features</h2>
+            <p class="section-description">
+                Feature support varies by IDE and AI assistant combination.
+                Even if an MCP server supports a feature, the client must also support it.
+            </p>
+            <div id="features-matrix" class="matrix-container">
+                <p class="loading">Loading feature data...</p>
+            </div>
+        </section>
+
+        <section id="changelog">
+            <h2>Changelog</h2>
+            <p class="section-description">Recent MCP specification updates and client releases.</p>
+            <div id="changelog-list" class="changelog-container">
+                <p class="loading">Loading changelog...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            Data is community-maintained.
+            <a href="https://github.com/anthropics/mcpiuse" target="_blank" rel="noopener">Contribute on GitHub</a>.
+        </p>
+        <p>
+            <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener">MCP Specification</a> |
+            <a href="https://modelcontextprotocol.io/clients" target="_blank" rel="noopener">Official MCP Clients List</a>
+        </p>
+        <p>
+            <a href="https://www.taivala.com" target="_blank" rel="noopener">Taivala</a> &mdash; MCP governance and LLM context management.
+        </p>
+    </footer>
+
+    <script src="app.js?v=19"></script>
+</body>
+</html>

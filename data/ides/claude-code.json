@@ -1,0 +1,17 @@
+{
+  "id": "claude-code",
+  "name": "Claude Code",
+  "vendor": "Anthropic",
+  "category": "cli",
+  "website": "https://claude.ai/code",
+  "mcp_docs": "https://docs.anthropic.com/en/docs/claude-code",
+  "config_paths": [
+    ".mcp.json",
+    "~/.claude.json"
+  ],
+  "min_mcp_version": null,
+  "compatible_ai_clients": ["native"],
+  "notes": {
+    "1": "CLI tool with full MCP spec support"
+  }
+}

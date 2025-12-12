@@ -1,0 +1,12 @@
+{
+  "id": "codeium",
+  "name": "Codeium",
+  "vendor": "Codeium",
+  "website": "https://codeium.com",
+  "docs": "https://codeium.com/docs",
+  "compatible_ides": ["vscode", "jetbrains", "neovim"],
+  "notes": {
+    "1": "Free AI assistant for individuals",
+    "2": "Also powers Windsurf IDE"
+  }
+}

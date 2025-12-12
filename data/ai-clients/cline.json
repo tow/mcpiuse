@@ -1,0 +1,13 @@
+{
+  "id": "cline",
+  "name": "Cline",
+  "vendor": "Cline (Community)",
+  "website": "https://github.com/cline/cline",
+  "docs": "https://github.com/cline/cline#readme",
+  "compatible_ides": ["vscode", "jetbrains"],
+  "notes": {
+    "1": "Open source AI coding assistant",
+    "2": "Supports tools but not resources or prompts",
+    "3": "Good option for JetBrains users who need remote MCP support"
+  }
+}

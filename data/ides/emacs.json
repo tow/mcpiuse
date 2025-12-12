@@ -1,0 +1,18 @@
+{
+  "id": "emacs",
+  "name": "Emacs",
+  "vendor": "GNU",
+  "category": "editor",
+  "website": "https://www.gnu.org/software/emacs/",
+  "mcp_docs": "https://github.com/karthink/gptel",
+  "config_paths": [
+    "~/.emacs.d/init.el",
+    "~/.config/emacs/init.el"
+  ],
+  "min_mcp_version": null,
+  "compatible_ai_clients": ["gptel", "ellama", "github-copilot"],
+  "notes": {
+    "1": "MCP support via mcp.el + gptel",
+    "2": "Multiple LLM backends supported"
+  }
+}

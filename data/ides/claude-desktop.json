@@ -1,0 +1,17 @@
+{
+  "id": "claude-desktop",
+  "name": "Claude Desktop",
+  "vendor": "Anthropic",
+  "category": "desktop",
+  "website": "https://claude.ai/download",
+  "mcp_docs": "https://modelcontextprotocol.io/quickstart/user",
+  "config_paths": [
+    "~/Library/Application Support/Claude/claude_desktop_config.json",
+    "%APPDATA%/Claude/claude_desktop_config.json"
+  ],
+  "min_mcp_version": null,
+  "compatible_ai_clients": ["native"],
+  "notes": {
+    "1": "Reference MCP implementation - full spec support"
+  }
+}

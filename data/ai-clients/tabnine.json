@@ -1,0 +1,12 @@
+{
+  "id": "tabnine",
+  "name": "Tabnine",
+  "vendor": "Tabnine",
+  "website": "https://tabnine.com",
+  "docs": "https://docs.tabnine.com",
+  "compatible_ides": ["vscode", "visual-studio", "jetbrains", "neovim", "emacs"],
+  "notes": {
+    "1": "Privacy-first AI with on-premise option",
+    "2": "Supports 20+ languages"
+  }
+}

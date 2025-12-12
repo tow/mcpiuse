@@ -1,0 +1,12 @@
+{
+  "id": "continue",
+  "name": "Continue",
+  "vendor": "Continue",
+  "website": "https://continue.dev",
+  "docs": "https://docs.continue.dev/customize/deep-dives/mcp",
+  "compatible_ides": ["vscode", "jetbrains"],
+  "notes": {
+    "1": "Open-source AI assistant with full MCP support",
+    "2": "Supports multiple LLM providers"
+  }
+}

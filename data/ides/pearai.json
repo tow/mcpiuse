@@ -1,0 +1,15 @@
+{
+  "id": "pearai",
+  "name": "PearAI",
+  "vendor": "PearAI",
+  "category": "ide",
+  "website": "https://trypear.ai",
+  "mcp_docs": null,
+  "config_paths": [],
+  "min_mcp_version": null,
+  "compatible_ai_clients": ["native"],
+  "notes": {
+    "1": "Open-source AI code editor",
+    "2": "Fork of VS Code with integrated AI"
+  }
+}

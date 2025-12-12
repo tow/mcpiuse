@@ -1,0 +1,18 @@
+{
+  "id": "zed",
+  "name": "Zed",
+  "vendor": "Zed Industries",
+  "category": "ide",
+  "website": "https://zed.dev",
+  "mcp_docs": "https://zed.dev/docs/assistant/model-context-protocol",
+  "config_paths": [
+    "~/.config/zed/settings.json"
+  ],
+  "min_mcp_version": null,
+  "compatible_ai_clients": ["native", "claude-code", "codex-cli"],
+  "notes": {
+    "1": "AI-native editor with built-in MCP support",
+    "2": "Supports Claude, OpenAI, Ollama and other LLM providers",
+    "3": "Can use Claude Code or Codex CLI as agentic runtime alongside native AI"
+  }
+}

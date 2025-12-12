@@ -1,0 +1,17 @@
+{
+  "id": "neovim",
+  "name": "Neovim",
+  "vendor": "Neovim Team",
+  "category": "editor",
+  "website": "https://neovim.io",
+  "mcp_docs": "https://github.com/ravitemer/mcphub.nvim",
+  "config_paths": [
+    "~/.config/nvim/init.lua"
+  ],
+  "min_mcp_version": null,
+  "compatible_ai_clients": ["avante", "codecompanion", "github-copilot", "codeium", "tabnine"],
+  "notes": {
+    "1": "MCP support via mcphub.nvim plugin",
+    "2": "Multiple AI plugins available"
+  }
+}

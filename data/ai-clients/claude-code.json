@@ -1,0 +1,11 @@
+{
+  "id": "claude-code",
+  "name": "Claude Code",
+  "vendor": "Anthropic",
+  "website": "https://claude.ai/code",
+  "docs": "https://docs.anthropic.com/en/docs/claude-code",
+  "compatible_ides": ["zed"],
+  "notes": {
+    "1": "Terminal-based AI assistant that can be used as agentic runtime alongside other editors"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "visual-studio",
+  "name": "Visual Studio",
+  "vendor": "Microsoft",
+  "category": "ide",
+  "website": "https://visualstudio.microsoft.com",
+  "mcp_docs": "https://learn.microsoft.com/en-us/visualstudio/ide/mcp-servers",
+  "config_paths": [
+    "%USERPROFILE%\\.mcp.json",
+    "<SOLUTIONDIR>\\.vs\\mcp.json",
+    "<SOLUTIONDIR>\\.mcp.json",
+    "<SOLUTIONDIR>\\.vscode\\mcp.json",
+    "<SOLUTIONDIR>\\.cursor\\mcp.json"
+  ],
+  "min_mcp_version": "17.14",
+  "compatible_ai_clients": ["github-copilot", "cody", "tabnine", "amazonq"],
+  "notes": {
+    "1": "MCP support since Visual Studio 2022 v17.14",
+    "2": "Reads VS Code and Cursor config files for compatibility",
+    "3": "Different extension ecosystem than VS Code"
+  }
+}

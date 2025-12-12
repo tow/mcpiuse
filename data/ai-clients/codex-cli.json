@@ -1,0 +1,11 @@
+{
+  "id": "codex-cli",
+  "name": "Codex CLI",
+  "vendor": "OpenAI",
+  "website": "https://github.com/openai/codex",
+  "docs": "https://github.com/openai/codex#readme",
+  "compatible_ides": ["zed"],
+  "notes": {
+    "1": "Terminal-based AI assistant that can be used as agentic runtime alongside other editors"
+  }
+}

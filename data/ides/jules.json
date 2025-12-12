@@ -1,0 +1,16 @@
+{
+  "id": "jules",
+  "name": "Jules",
+  "vendor": "Google",
+  "category": "agent",
+  "website": "https://jules.google",
+  "mcp_docs": null,
+  "config_paths": [],
+  "min_mcp_version": null,
+  "compatible_ai_clients": ["native"],
+  "notes": {
+    "1": "Autonomous async coding agent",
+    "2": "Runs in background on Google Cloud VMs",
+    "3": "Integrates with GitHub repos"
+  }
+}

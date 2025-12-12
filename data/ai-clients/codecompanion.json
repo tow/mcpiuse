@@ -1,0 +1,12 @@
+{
+  "id": "codecompanion",
+  "name": "CodeCompanion.nvim",
+  "vendor": "Community",
+  "website": "https://github.com/olimorris/codecompanion.nvim",
+  "docs": "https://github.com/olimorris/codecompanion.nvim#readme",
+  "compatible_ides": ["neovim"],
+  "notes": {
+    "1": "AI assistant with deep Neovim integration",
+    "2": "Supports multiple LLM providers"
+  }
+}

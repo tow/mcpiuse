@@ -1,0 +1,18 @@
+{
+  "id": "gemini-cli",
+  "name": "Gemini CLI",
+  "vendor": "Google",
+  "category": "cli",
+  "website": "https://github.com/google-gemini/gemini-cli",
+  "mcp_docs": "https://geminicli.com/docs/tools/mcp-server/",
+  "config_paths": [
+    "~/.gemini/settings.json"
+  ],
+  "min_mcp_version": null,
+  "compatible_ai_clients": ["native"],
+  "notes": {
+    "1": "Open-source CLI with full MCP support",
+    "2": "Free tier: 1000 requests/day with Gemini 2.5 Pro",
+    "3": "1M token context window"
+  }
+}

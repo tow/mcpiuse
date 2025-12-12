@@ -1,0 +1,17 @@
+{
+  "id": "jetbrains",
+  "name": "JetBrains IDEs",
+  "vendor": "JetBrains",
+  "category": "ide",
+  "website": "https://www.jetbrains.com",
+  "mcp_docs": "https://www.jetbrains.com/help/ai-assistant/mcp.html",
+  "config_paths": [],
+  "min_mcp_version": "2025.2",
+  "compatible_ai_clients": ["native", "github-copilot", "cline", "continue", "cody", "tabnine", "codeium", "amazonq", "gemini-code-assist"],
+  "notes": {
+    "1": "Includes IntelliJ IDEA, PyCharm, WebStorm, GoLand, etc.",
+    "2": "MCP server support since 2025.2 (can act as MCP server for other clients)",
+    "3": "AI Assistant only supports stdio transport - use mcp-remote proxy for HTTP servers",
+    "4": "Configuration via Settings UI only, not file-based"
+  }
+}

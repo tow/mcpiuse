@@ -1,0 +1,15 @@
+{
+  "id": "windsurf",
+  "name": "Windsurf",
+  "vendor": "Codeium",
+  "category": "ide",
+  "website": "https://codeium.com/windsurf",
+  "mcp_docs": "https://docs.windsurf.com/windsurf/cascade/mcp",
+  "config_paths": [],
+  "min_mcp_version": null,
+  "compatible_ai_clients": ["native"],
+  "notes": {
+    "1": "VS Code fork with Cascade AI",
+    "2": "MCP support details still being researched"
+  }
+}

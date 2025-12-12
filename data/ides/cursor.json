@@ -1,0 +1,19 @@
+{
+  "id": "cursor",
+  "name": "Cursor",
+  "vendor": "Anysphere",
+  "category": "ide",
+  "website": "https://cursor.com",
+  "mcp_docs": "https://cursor.com/docs/context/mcp",
+  "config_paths": [
+    ".cursor/mcp.json",
+    "~/.cursor/mcp.json"
+  ],
+  "min_mcp_version": null,
+  "compatible_ai_clients": ["native"],
+  "notes": {
+    "1": "VS Code fork with native AI integration",
+    "2": "One-click MCP server installation from cursor.directory",
+    "3": "Supports stdio, SSE, and Streamable HTTP transports"
+  }
+}

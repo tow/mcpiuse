@@ -1,0 +1,182 @@
+{
+  "entries": [
+    {
+      "date": "2025-11-25",
+      "type": "spec",
+      "title": "MCP specification 2025-11-25 released",
+      "description": "Latest stable release of the MCP specification.",
+      "links": [
+        {
+          "title": "Specification",
+          "url": "https://modelcontextprotocol.io/specification/2025-11-25"
+        }
+      ]
+    },
+    {
+      "date": "2025-08-14",
+      "type": "client",
+      "client": "xcode+github-copilot",
+      "title": "GitHub Copilot for Xcode adds OAuth for MCP",
+      "description": "Version 0.41.0 adds OAuth support for remote GitHub MCP servers and MCP logs access from settings.",
+      "links": [
+        {
+          "title": "Changelog",
+          "url": "https://github.com/github/CopilotForXcode/blob/main/CHANGELOG.md"
+        }
+      ]
+    },
+    {
+      "date": "2025-07-10",
+      "type": "client",
+      "client": "vscode+github-copilot",
+      "title": "VS Code MCP support reaches general availability",
+      "description": "VS Code 1.102 makes MCP generally available with MCP view, gallery for server management, and profiles/Settings Sync support.",
+      "links": [
+        {
+          "title": "Release Notes",
+          "url": "https://github.com/microsoft/vscode/releases/tag/1.102.0"
+        }
+      ]
+    },
+    {
+      "date": "2025-06-30",
+      "type": "client",
+      "client": "xcode+github-copilot",
+      "title": "GitHub Copilot for Xcode adds remote MCP servers",
+      "description": "Version 0.38.0 adds support for connecting to remote MCP server instances.",
+      "links": [
+        {
+          "title": "Changelog",
+          "url": "https://github.com/github/CopilotForXcode/blob/main/CHANGELOG.md"
+        }
+      ]
+    },
+    {
+      "date": "2025-06-18",
+      "type": "spec",
+      "title": "MCP specification 2025-06-18 released",
+      "description": "Adds elicitation, roots, and streamable HTTP transport. Deprecates SSE transport.",
+      "links": [
+        {
+          "title": "Specification",
+          "url": "https://modelcontextprotocol.io/specification/2025-06-18"
+        }
+      ]
+    },
+    {
+      "date": "2025-06-12",
+      "type": "client",
+      "client": "vscode+github-copilot",
+      "title": "VS Code gains full MCP specification support",
+      "description": "VS Code now supports the complete MCP specification including tools, prompts, resources, sampling, authorization, and HTTP transport.",
+      "links": [
+        {
+          "title": "Announcement",
+          "url": "https://code.visualstudio.com/blogs/2025/06/12/full-mcp-spec-support"
+        }
+      ]
+    },
+    {
+      "date": "2025-05-19",
+      "type": "client",
+      "client": "xcode+github-copilot",
+      "title": "GitHub Copilot for Xcode adds MCP support",
+      "description": "Version 0.35.0 introduces Model Context Protocol support with MCP tools configuration in Agent Mode.",
+      "links": [
+        {
+          "title": "Changelog",
+          "url": "https://github.com/github/CopilotForXcode/blob/main/CHANGELOG.md"
+        }
+      ]
+    },
+    {
+      "date": "2025-05-13",
+      "type": "client",
+      "client": "visual-studio+github-copilot",
+      "title": "Visual Studio 2022 v17.14 adds MCP support",
+      "description": "MCP support reaches general availability with server management, OAuth authentication, prompts, resources, sampling, and elicitation features.",
+      "links": [
+        {
+          "title": "Release Notes",
+          "url": "https://learn.microsoft.com/en-us/visualstudio/releases/2022/release-notes-v17.14"
+        }
+      ]
+    },
+    {
+      "date": "2025-04-04",
+      "type": "client",
+      "client": "vscode+github-copilot",
+      "title": "VS Code 1.99 introduces MCP tools support",
+      "description": "Initial MCP support with tools, server discovery and management, configuration via .vscode/mcp.json.",
+      "links": [
+        {
+          "title": "Release Notes",
+          "url": "https://github.com/microsoft/vscode/releases/tag/1.99.0"
+        }
+      ]
+    },
+    {
+      "date": "2025-03-26",
+      "type": "spec",
+      "title": "MCP specification 2025-03-26 released",
+      "description": "Stable release of the March 2025 MCP specification revision.",
+      "links": [
+        {
+          "title": "Specification",
+          "url": "https://modelcontextprotocol.io/specification/2025-03-26"
+        }
+      ]
+    },
+    {
+      "date": "2025-02-11",
+      "type": "client",
+      "client": "xcode+github-copilot",
+      "title": "GitHub Copilot for Xcode public preview",
+      "description": "Version 0.31.0 released as public preview with Copilot Chat support and GitHub Free plan support.",
+      "links": [
+        {
+          "title": "Repository",
+          "url": "https://github.com/github/CopilotForXcode"
+        }
+      ]
+    },
+    {
+      "date": "2025-01-21",
+      "type": "client",
+      "client": "vscode+cline",
+      "title": "Cline v3.2.0 announces MCP server enhancements",
+      "description": "First major release featuring MCP with toggle on/off functionality and auto-approve settings for individual servers.",
+      "links": [
+        {
+          "title": "Release",
+          "url": "https://github.com/cline/cline/releases/tag/v3.2.0"
+        }
+      ]
+    },
+    {
+      "date": "2024-12-18",
+      "type": "client",
+      "client": "vscode+cline",
+      "title": "Cline v3.0.0 includes MCP SDK",
+      "description": "MCP SDK dependency (@modelcontextprotocol/sdk v1.0.1) first appears in Cline, enabling MCP server integration.",
+      "links": [
+        {
+          "title": "Release",
+          "url": "https://github.com/cline/cline/releases/tag/v3.0.0"
+        }
+      ]
+    },
+    {
+      "date": "2024-11-25",
+      "type": "spec",
+      "title": "Model Context Protocol announced",
+      "description": "Anthropic open-sources MCP, a new standard for connecting AI assistants to data systems. Claude Desktop ships with MCP support. Pre-built servers for Google Drive, Slack, GitHub, Git, Postgres, and Puppeteer available at launch.",
+      "links": [
+        {
+          "title": "Announcement",
+          "url": "https://www.anthropic.com/news/model-context-protocol"
+        }
+      ]
+    }
+  ]
+}

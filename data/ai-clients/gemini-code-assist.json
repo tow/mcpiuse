@@ -1,0 +1,12 @@
+{
+  "id": "gemini-code-assist",
+  "name": "Gemini Code Assist",
+  "vendor": "Google",
+  "website": "https://developers.google.com/gemini-code-assist",
+  "docs": "https://developers.google.com/gemini-code-assist/docs/overview",
+  "compatible_ides": ["vscode", "jetbrains"],
+  "notes": {
+    "1": "Free tier available for individuals",
+    "2": "Agent mode with multi-file editing since 2025"
+  }
+}

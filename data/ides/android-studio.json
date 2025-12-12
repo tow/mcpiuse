@@ -1,0 +1,16 @@
+{
+  "id": "android-studio",
+  "name": "Android Studio",
+  "vendor": "Google",
+  "category": "ide",
+  "website": "https://developer.android.com/studio",
+  "mcp_docs": null,
+  "config_paths": [],
+  "min_mcp_version": "Otter 1",
+  "compatible_ai_clients": ["native", "github-copilot", "cline", "continue", "cody", "tabnine", "codeium", "amazonq", "gemini-code-assist"],
+  "notes": {
+    "1": "Based on IntelliJ Platform - shares JetBrains plugin ecosystem",
+    "2": "Gemini is the native AI (instead of JetBrains AI Assistant)",
+    "3": "MCP configuration in Settings > Tools > Gemini > MCP Servers"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "amazonq",
+  "name": "Amazon Q",
+  "vendor": "Amazon",
+  "website": "https://aws.amazon.com/q/developer/",
+  "docs": "https://docs.aws.amazon.com/amazonq/",
+  "compatible_ides": ["vscode", "visual-studio", "jetbrains"],
+  "notes": {
+    "1": "Formerly CodeWhisperer",
+    "2": "Free tier available with AWS account"
+  }
+}

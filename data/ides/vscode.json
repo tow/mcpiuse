@@ -1,0 +1,16 @@
+{
+  "id": "vscode",
+  "name": "VS Code",
+  "vendor": "Microsoft",
+  "category": "ide",
+  "website": "https://code.visualstudio.com",
+  "mcp_docs": "https://code.visualstudio.com/docs/copilot/chat/mcp-servers",
+  "config_paths": [
+    ".vscode/mcp.json"
+  ],
+  "min_mcp_version": "1.95",
+  "compatible_ai_clients": ["github-copilot", "cline", "continue", "cody", "tabnine", "codeium", "amazonq", "gemini-code-assist"],
+  "notes": {
+    "1": "Native MCP support since v1.95 (late 2024)"
+  }
+}

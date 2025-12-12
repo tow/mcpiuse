@@ -1,0 +1,12 @@
+{
+  "id": "ellama",
+  "name": "ellama",
+  "vendor": "Community",
+  "website": "https://github.com/s-kostyaev/ellama",
+  "docs": "https://github.com/s-kostyaev/ellama#readme",
+  "compatible_ides": ["emacs"],
+  "notes": {
+    "1": "Full-featured LLM client for Emacs",
+    "2": "Task-oriented commands"
+  }
+}

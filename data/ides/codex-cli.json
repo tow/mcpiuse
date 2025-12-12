@@ -1,0 +1,16 @@
+{
+  "id": "codex-cli",
+  "name": "Codex CLI",
+  "vendor": "OpenAI",
+  "category": "cli",
+  "website": "https://github.com/openai/codex",
+  "mcp_docs": "https://github.com/openai/codex#mcp",
+  "config_paths": [
+    "~/.codex/config.toml"
+  ],
+  "min_mcp_version": null,
+  "compatible_ai_clients": ["native"],
+  "notes": {
+    "1": "OpenAI CLI tool with MCP support"
+  }
+}

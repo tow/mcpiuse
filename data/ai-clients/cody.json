@@ -1,0 +1,12 @@
+{
+  "id": "cody",
+  "name": "Sourcegraph Cody",
+  "vendor": "Sourcegraph",
+  "website": "https://sourcegraph.com/cody",
+  "docs": "https://sourcegraph.com/docs/cody",
+  "compatible_ides": ["vscode", "visual-studio", "jetbrains"],
+  "notes": {
+    "1": "AI assistant with codebase-wide context",
+    "2": "Enterprise-focused with SOC 2 compliance"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "native",
+  "name": "Native",
+  "vendor": null,
+  "website": null,
+  "docs": null,
+  "compatible_ides": [],
+  "native_names": {
+    "jetbrains": "JetBrains AI Assistant",
+    "android-studio": "Gemini",
+    "xcode": "Xcode Intelligence (v26+)",
+    "windsurf": "Cascade",
+    "firebase-studio": "Gemini (Project IDX)",
+    "jules": "Gemini"
+  },
+  "notes": {
+    "1": "Built-in AI varies by IDE"
+  }
+}
