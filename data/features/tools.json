@@ -58,9 +58,11 @@
     "android-studio+amazonq": "y",
     "android-studio+gemini-code-assist": "u",
     "android-studio+native": "y",
-    "xcode+native": "u"
+    "xcode+native": "u",
+    "lovable+native": "y #2"
   },
   "notes": {
-    "1": "JetBrains AI Assistant only supports stdio - cannot connect to remote MCP servers"
+    "1": "JetBrains AI Assistant only supports stdio - cannot connect to remote MCP servers",
+    "2": "Business/Enterprise plans only"
   }
 }

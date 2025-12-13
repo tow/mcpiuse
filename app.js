@@ -22,7 +22,7 @@ const SUPPORT_ICONS = {
 const IDE_FILES = [
     'vscode', 'cursor', 'visual-studio', 'jetbrains', 'android-studio', 'xcode',
     'windsurf', 'zed', 'neovim', 'emacs', 'void', 'pearai',
-    'firebase-studio', 'gemini-cli', 'jules',
+    'firebase-studio', 'gemini-cli', 'jules', 'lovable',
     'claude-desktop', 'claude-code', 'codex-cli'
 ];
 

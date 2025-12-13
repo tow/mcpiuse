@@ -1,0 +1,16 @@
+{
+  "id": "lovable",
+  "name": "Lovable",
+  "vendor": "Lovable",
+  "category": "web-ide",
+  "website": "https://lovable.dev",
+  "mcp_docs": "https://docs.lovable.dev/integrations/mcp-servers",
+  "config_paths": [],
+  "min_mcp_version": null,
+  "compatible_ai_clients": ["native"],
+  "notes": {
+    "1": "AI-powered app builder with MCP server support",
+    "2": "Custom MCP servers available on Business/Enterprise plans",
+    "3": "Prebuilt connectors for Atlassian, Linear, Notion, n8n, Miro"
+  }
+}
