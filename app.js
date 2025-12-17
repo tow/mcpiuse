@@ -131,28 +131,12 @@ function renderSupportCell(support, notes, source, comboKey, featureId) {
         noteText = notes[noteRef];
     }
 
-    // Build source data attributes
-    let sourceAttrs = '';
-    if (source) {
-        const sourceUrl = typeof source === 'string' ? source : source.url;
-        const sourceEvidence = typeof source === 'object' ? source.evidence : null;
-        if (sourceUrl) {
-            sourceAttrs += ` data-source-url="${escapeHtml(sourceUrl)}"`;
-        }
-        if (sourceEvidence) {
-            sourceAttrs += ` data-source-evidence="${escapeHtml(sourceEvidence)}"`;
-        }
-    }
-    if (comboKey) {
-        sourceAttrs += ` data-combo-key="${escapeHtml(comboKey)}"`;
-    }
-    if (featureId) {
-        sourceAttrs += ` data-feature-id="${escapeHtml(featureId)}"`;
-    }
-
+    // Store only identifiers - lookup happens in showSourceModal
+    const dataAttrs = `data-combo-key="${escapeHtml(comboKey)}" data-feature-id="${escapeHtml(featureId)}"`;
     const noteAttr = noteText ? ` data-note="${escapeHtml(noteText)}"` : '';
     const hasSource = source ? ' has-source' : '';
-    let html = `<span class="support-icon ${iconInfo.class}${hasSource}"${noteAttr}${sourceAttrs} onclick="showSourceModal(this)">${iconInfo.icon}</span>`;
+
+    let html = `<span class="support-icon ${iconInfo.class}${hasSource}"${noteAttr} ${dataAttrs} onclick="showSourceModal(this)">${iconInfo.icon}</span>`;
 
     return html;
 }
@@ -387,15 +371,21 @@ function showSourceModal(element) {
     // Prevent event from bubbling (e.g., to group toggle)
     event.stopPropagation();
 
-    const sourceUrl = element.dataset.sourceUrl;
-    const sourceEvidence = element.dataset.sourceEvidence;
     const comboKey = element.dataset.comboKey;
     const featureId = element.dataset.featureId;
     const note = element.dataset.note;
 
-    // Get feature title
+    // Get feature and source data directly from loaded data
     const feature = features[featureId];
-    const featureTitle = feature ? feature.title : featureId;
+    if (!feature) {
+        console.error('Feature not found:', featureId);
+        return;
+    }
+
+    const featureTitle = feature.title || featureId;
+    const source = feature.sources?.[comboKey];
+    const url = source ? (typeof source === 'string' ? source : source.url) : null;
+    const evidence = source && typeof source === 'object' ? source.evidence : null;
 
     // Parse combo key for display
     let clientDisplay = comboKey;
@@ -449,43 +439,20 @@ function showSourceModal(element) {
         noteEl.style.display = 'none';
     }
 
-    // Try to get evidence from feature sources directly as fallback
-    let evidence = sourceEvidence;
-    if (!evidence && featureId && comboKey) {
-        const feature = features[featureId];
-        if (feature && feature.sources && feature.sources[comboKey]) {
-            const src = feature.sources[comboKey];
-            if (typeof src === 'object' && src.evidence) {
-                evidence = src.evidence;
-            }
-        }
-    }
-
     const evidenceEl = modal.querySelector('.source-modal-evidence');
     if (evidence) {
         evidenceEl.innerHTML = `<strong>Evidence:</strong> ${escapeHtml(evidence)}`;
         evidenceEl.style.display = 'block';
     } else {
-        evidenceEl.style.display = 'none';
+        evidenceEl.innerHTML = '<strong>Evidence:</strong> <em>No evidence recorded</em>';
+        evidenceEl.style.display = 'block';
     }
 
     const linkEl = modal.querySelector('.source-modal-link');
-    // Try to get URL from feature sources directly as fallback
-    let url = sourceUrl;
-    if (!url && featureId && comboKey) {
-        const feature = features[featureId];
-        if (feature && feature.sources && feature.sources[comboKey]) {
-            const src = feature.sources[comboKey];
-            url = typeof src === 'string' ? src : src.url;
-        }
-    }
-
     if (url) {
-        // Decode any HTML entities that might have been escaped
-        const decodedUrl = url.replace(/&amp;/g, '&');
         linkEl.innerHTML = `
-            <a href="${decodedUrl}" target="_blank" rel="noopener" class="source-button">View Source Documentation &rarr;</a>
-            <div class="source-url">${escapeHtml(decodedUrl)}</div>
+            <a href="${url}" target="_blank" rel="noopener" class="source-button">View Source Documentation &rarr;</a>
+            <div class="source-url">${escapeHtml(url)}</div>
         `;
         linkEl.style.display = 'block';
     } else {

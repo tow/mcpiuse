@@ -9,7 +9,7 @@
     "~/.config/nvim/init.lua"
   ],
   "min_mcp_version": null,
-  "compatible_ai_clients": ["avante", "codecompanion", "github-copilot", "codeium", "tabnine"],
+  "compatible_ai_clients": ["avante", "codecompanion", "github-copilot", "codeium", "tabnine", "amp", "augment"],
   "notes": {
     "1": "MCP support via mcphub.nvim plugin",
     "2": "Multiple AI plugins available"

@@ -7,7 +7,7 @@
   "mcp_docs": "https://www.jetbrains.com/help/ai-assistant/mcp.html",
   "config_paths": [],
   "min_mcp_version": "2025.2",
-  "compatible_ai_clients": ["native", "github-copilot", "cline", "continue", "cody", "tabnine", "codeium", "amazonq", "gemini-code-assist"],
+  "compatible_ai_clients": ["native", "github-copilot", "cline", "continue", "cody", "tabnine", "codeium", "amazonq", "gemini-code-assist", "amp", "augment"],
   "notes": {
     "1": "Includes IntelliJ IDEA, PyCharm, WebStorm, GoLand, etc.",
     "2": "MCP server support since 2025.2 (can act as MCP server for other clients)",
