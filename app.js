@@ -23,11 +23,11 @@ const IDE_FILES = [
     'vscode', 'cursor', 'visual-studio', 'jetbrains', 'android-studio', 'xcode',
     'windsurf', 'zed', 'neovim', 'emacs', 'void', 'pearai',
     'firebase-studio', 'gemini-cli', 'jules', 'lovable',
-    'claude-desktop', 'claude-code', 'codex-cli'
+    'claude-desktop', 'claude-code', 'codex-cli', 'amp'
 ];
 
 const AI_CLIENT_FILES = [
-    'github-copilot', 'cline', 'continue', 'cody', 'tabnine', 'codeium', 'amazonq', 'gemini-code-assist',
+    'github-copilot', 'cline', 'continue', 'cody', 'tabnine', 'codeium', 'amazonq', 'gemini-code-assist', 'amp', 'augment',
     'native',
     'avante', 'codecompanion', 'gptel', 'ellama',
     'claude-code', 'codex-cli'
@@ -121,7 +121,7 @@ function parseSupport(value) {
 }
 
 // Render support cell
-function renderSupportCell(support, notes) {
+function renderSupportCell(support, notes, source, comboKey, featureId) {
     const { code, noteRef } = parseSupport(support);
     const iconInfo = SUPPORT_ICONS[code] || SUPPORT_ICONS.u;
 
@@ -131,8 +131,28 @@ function renderSupportCell(support, notes) {
         noteText = notes[noteRef];
     }
 
+    // Build source data attributes
+    let sourceAttrs = '';
+    if (source) {
+        const sourceUrl = typeof source === 'string' ? source : source.url;
+        const sourceEvidence = typeof source === 'object' ? source.evidence : null;
+        if (sourceUrl) {
+            sourceAttrs += ` data-source-url="${escapeHtml(sourceUrl)}"`;
+        }
+        if (sourceEvidence) {
+            sourceAttrs += ` data-source-evidence="${escapeHtml(sourceEvidence)}"`;
+        }
+    }
+    if (comboKey) {
+        sourceAttrs += ` data-combo-key="${escapeHtml(comboKey)}"`;
+    }
+    if (featureId) {
+        sourceAttrs += ` data-feature-id="${escapeHtml(featureId)}"`;
+    }
+
     const noteAttr = noteText ? ` data-note="${escapeHtml(noteText)}"` : '';
-    let html = `<span class="support-icon ${iconInfo.class}"${noteAttr}>${iconInfo.icon}</span>`;
+    const hasSource = source ? ' has-source' : '';
+    let html = `<span class="support-icon ${iconInfo.class}${hasSource}"${noteAttr}${sourceAttrs} onclick="showSourceModal(this)">${iconInfo.icon}</span>`;
 
     return html;
 }
@@ -243,7 +263,7 @@ function renderPluginsMatrix() {
     container.innerHTML = html;
 }
 
-// Render features matrix
+// Render features matrix (transposed: clients as rows, features as columns, grouped by IDE)
 function renderFeaturesMatrix() {
     const container = document.getElementById('features-matrix');
     const combos = getClientCombinations();
@@ -253,70 +273,209 @@ function renderFeaturesMatrix() {
         return;
     }
 
-    // Collect all notes
-    const allNotes = {};
-    for (const feature of Object.values(features)) {
-        if (feature.notes) {
-            for (const [key, value] of Object.entries(feature.notes)) {
-                allNotes[key] = value;
-            }
-        }
-    }
+    // Build ordered feature list
+    const featureList = FEATURE_FILES.map(id => features[id]).filter(f => f);
 
-    let html = '<table class="matrix-table">';
-
-    // Header row
-    html += '<thead><tr>';
-    html += '<th class="feature-header">Feature</th>';
+    // Group combos by IDE
+    const groupedByIde = {};
     for (const combo of combos) {
-        // For standalone apps (desktop/cli), just show AI client name
-        const isStandalone = combo.ide.category === 'desktop' || combo.ide.category === 'cli';
-        if (isStandalone) {
-            html += `<th class="client-header">
-                <span class="ai-name standalone">${escapeHtml(combo.aiClient.name)}</span>
-            </th>`;
-        } else {
-            html += `<th class="client-header">
-                <span class="ide-name">${escapeHtml(combo.ide.name)}</span>
-                <span class="ai-name">${escapeHtml(combo.aiClient.name)}</span>
-            </th>`;
+        const ideId = combo.ideId;
+        if (!groupedByIde[ideId]) {
+            groupedByIde[ideId] = {
+                ide: combo.ide,
+                combos: []
+            };
         }
+        groupedByIde[ideId].combos.push(combo);
     }
-    html += '</tr></thead>';
 
-    // Feature rows
-    html += '<tbody>';
-    for (const featureId of FEATURE_FILES) {
-        const feature = features[featureId];
-        if (!feature) continue;
+    let html = '<table class="matrix-table transposed">';
 
-        html += '<tr>';
-        html += `<td class="feature-cell">
+    // Header row: Client | Feature1 | Feature2 | ...
+    html += '<thead><tr>';
+    html += '<th class="client-header-cell">Client</th>';
+    for (const feature of featureList) {
+        html += `<th class="feature-header-cell">
             <a href="${escapeHtml(feature.spec_url)}" target="_blank" rel="noopener" class="feature-link" title="${escapeHtml(feature.description)}">
                 ${escapeHtml(feature.title)}
                 <span class="spec-link-icon">&#8599;</span>
             </a>
-        </td>`;
+        </th>`;
+    }
+    html += '</tr></thead>';
 
-        for (const combo of combos) {
-            const support = feature.stats ? feature.stats[combo.key] : null;
-            html += `<td class="support-cell">${renderSupportCell(support, feature.notes)}</td>`;
+    // Sort IDEs: by plugin count descending, then alphabetically
+    const sortedIdeIds = Object.keys(groupedByIde).sort((a, b) => {
+        const countDiff = groupedByIde[b].combos.length - groupedByIde[a].combos.length;
+        if (countDiff !== 0) return countDiff;
+        return groupedByIde[a].ide.name.localeCompare(groupedByIde[b].ide.name);
+    });
+
+    // Body rows: grouped by IDE
+    html += '<tbody>';
+    for (const ideId of sortedIdeIds) {
+        const group = groupedByIde[ideId];
+        if (!group) continue;
+
+        const ide = group.ide;
+        const groupId = `group-${ideId}`;
+
+        // For single-plugin IDEs, don't make it collapsible
+        if (group.combos.length === 1) {
+            const combo = group.combos[0];
+            // Use IDE name for single-plugin entries
+            const displayName = ide.name;
+            html += `<tr>`;
+            html += `<td class="client-name-cell">
+                <span class="ai-name standalone">${escapeHtml(displayName)}</span>
+            </td>`;
+            for (const feature of featureList) {
+                const support = feature.stats ? feature.stats[combo.key] : null;
+                const source = feature.sources ? feature.sources[combo.key] : null;
+                html += `<td class="support-cell">${renderSupportCell(support, feature.notes, source, combo.key, feature.id)}</td>`;
+            }
+            html += '</tr>';
+        } else {
+            // IDE group header row (collapsible)
+            html += `<tr class="ide-group-header" data-group="${groupId}" onclick="toggleGroup('${groupId}')">`;
+            html += `<td class="ide-header-cell" colspan="${featureList.length + 1}">
+                <span class="expand-icon">&#9654;</span>
+                <span class="ide-name">${escapeHtml(ide.name)}</span>
+                <span class="client-count">${group.combos.length} plugins</span>
+            </td>`;
+            html += '</tr>';
+
+            // AI client rows (hidden by default)
+            for (const combo of group.combos) {
+                // For "native" AI client, show the native name if available
+                let aiName = combo.aiClient.name;
+                if (combo.aiClientId === 'native') {
+                    const nativeName = combo.aiClient.native_names?.[ideId];
+                    aiName = nativeName || ide.name + ' (Native)';
+                }
+                html += `<tr class="ide-group-row ${groupId}" style="display: none;">`;
+                html += `<td class="client-name-cell">
+                    <span class="ai-name">${escapeHtml(aiName)}</span>
+                </td>`;
+                for (const feature of featureList) {
+                    const support = feature.stats ? feature.stats[combo.key] : null;
+                    const source = feature.sources ? feature.sources[combo.key] : null;
+                    html += `<td class="support-cell">${renderSupportCell(support, feature.notes, source, combo.key, feature.id)}</td>`;
+                }
+                html += '</tr>';
+            }
         }
-
-        html += '</tr>';
     }
     html += '</tbody></table>';
 
-    // Notes section
-    if (Object.keys(allNotes).length > 0) {
-        html += '<div class="matrix-notes"><h4>Notes</h4><ul>';
-        for (const [key, value] of Object.entries(allNotes)) {
-            html += `<li><strong>#${key}</strong>: ${escapeHtml(value)}</li>`;
-        }
-        html += '</ul></div>';
+    container.innerHTML = html;
+}
+
+// Toggle visibility of IDE group rows
+function toggleGroup(groupId) {
+    const header = document.querySelector(`tr[data-group="${groupId}"]`);
+    const rows = document.querySelectorAll(`tr.${groupId}`);
+    const isExpanded = header.classList.toggle('expanded');
+
+    rows.forEach(row => {
+        row.style.display = isExpanded ? '' : 'none';
+    });
+}
+
+// Show source modal when clicking on a support cell
+function showSourceModal(element) {
+    // Prevent event from bubbling (e.g., to group toggle)
+    event.stopPropagation();
+
+    const sourceUrl = element.dataset.sourceUrl;
+    const sourceEvidence = element.dataset.sourceEvidence;
+    const comboKey = element.dataset.comboKey;
+    const featureId = element.dataset.featureId;
+    const note = element.dataset.note;
+
+    // Get feature title
+    const feature = features[featureId];
+    const featureTitle = feature ? feature.title : featureId;
+
+    // Parse combo key for display
+    let clientDisplay = comboKey;
+    if (comboKey) {
+        const [ideId, aiClientId] = comboKey.split('+');
+        const ide = ides[ideId];
+        const aiClient = aiClients[aiClientId];
+        const ideName = ide ? ide.name : ideId;
+        const aiName = aiClient ? (aiClientId === 'native' ? (aiClient.native_names?.[ideId] || 'Native') : aiClient.name) : aiClientId;
+        clientDisplay = `${ideName} + ${aiName}`;
     }
 
-    container.innerHTML = html;
+    // Get or create modal
+    let modal = document.getElementById('source-modal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'source-modal';
+        modal.className = 'source-modal';
+        modal.innerHTML = `
+            <div class="source-modal-content">
+                <button class="source-modal-close" onclick="closeSourceModal()">&times;</button>
+                <h3 class="source-modal-title"></h3>
+                <div class="source-modal-client"></div>
+                <div class="source-modal-note"></div>
+                <div class="source-modal-evidence"></div>
+                <div class="source-modal-link"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        // Close on backdrop click
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeSourceModal();
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeSourceModal();
+        });
+    }
+
+    // Populate modal
+    modal.querySelector('.source-modal-title').textContent = featureTitle;
+    modal.querySelector('.source-modal-client').textContent = clientDisplay;
+
+    const noteEl = modal.querySelector('.source-modal-note');
+    if (note) {
+        noteEl.innerHTML = `<strong>Note:</strong> ${escapeHtml(note)}`;
+        noteEl.style.display = 'block';
+    } else {
+        noteEl.style.display = 'none';
+    }
+
+    const evidenceEl = modal.querySelector('.source-modal-evidence');
+    if (sourceEvidence) {
+        evidenceEl.innerHTML = `<strong>Evidence:</strong> ${escapeHtml(sourceEvidence)}`;
+        evidenceEl.style.display = 'block';
+    } else {
+        evidenceEl.style.display = 'none';
+    }
+
+    const linkEl = modal.querySelector('.source-modal-link');
+    if (sourceUrl) {
+        linkEl.innerHTML = `<a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener">View Source &rarr;</a>`;
+        linkEl.style.display = 'block';
+    } else {
+        linkEl.innerHTML = '<em>No source available</em>';
+        linkEl.style.display = 'block';
+    }
+
+    // Show modal
+    modal.classList.add('active');
+}
+
+// Close source modal
+function closeSourceModal() {
+    const modal = document.getElementById('source-modal');
+    if (modal) {
+        modal.classList.remove('active');
+    }
 }
 // Render changelog
 function renderChangelog() {
