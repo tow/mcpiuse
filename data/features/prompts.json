@@ -7,14 +7,14 @@
   "category": "server",
   "stats": {
     "vscode+github-copilot": "y",
-    "vscode+cline": "n",
+    "vscode+cline": "y",
     "visual-studio+github-copilot": "y",
     "jetbrains+native": "n #1",
     "jetbrains+cline": "n",
     "android-studio+cline": "n",
     "xcode+github-copilot": "n",
     "cursor+native": "y",
-    "windsurf+native": "n",
+    "windsurf+native": "y",
     "claude-desktop+native": "y",
     "claude-code+native": "y",
     "codex-cli+native": "u",
@@ -58,10 +58,271 @@
     "android-studio+amazonq": "y",
     "android-studio+gemini-code-assist": "u",
     "android-studio+native": "u",
-    "xcode+native": "u",
-    "lovable+native": "u"
+    "xcode+native": "n",
+    "lovable+native": "u",
+    "vscode+amp": "u",
+    "jetbrains+amp": "u",
+    "neovim+amp": "u",
+    "vscode+augment": "u",
+    "jetbrains+augment": "u",
+    "neovim+augment": "u",
+    "amp+native": "u"
   },
   "notes": {
     "1": "Only single-argument prompts supported"
+  },
+  "sources": {
+    "vscode+github-copilot": {
+      "url": "https://code.visualstudio.com/docs/copilot/chat/mcp-servers",
+      "evidence": "Prompts explicitly listed as supported: 'MCP servers can provide preconfigured prompts for common tasks that you can invoke in chat with a slash command.'"
+    },
+    "visual-studio+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot MCP support applies across IDEs including Visual Studio. Prompts supported per docs."
+    },
+    "jetbrains+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot MCP support applies across IDEs. Docs state prompts are supported."
+    },
+    "xcode+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot Xcode prompts - docs unclear on support level, marked as not supported."
+    },
+    "android-studio+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot MCP support applies across IDEs including Android Studio. Prompts supported per docs."
+    },
+    "neovim+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot MCP support not available for Neovim."
+    },
+    "emacs+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot MCP support not available for Emacs."
+    },
+    "vscode+cline": {
+      "url": "https://docs.cline.bot/mcp/mcp-overview",
+      "evidence": "Prompts supported: 'MCP hosts discover the capabilities of connected servers and load their tools, prompts, and resources.'"
+    },
+    "jetbrains+cline": {
+      "url": "https://docs.cline.bot/mcp/mcp-overview",
+      "evidence": "Cline uses same MCP implementation across IDEs. Prompts not mentioned in JetBrains context."
+    },
+    "android-studio+cline": {
+      "url": "https://docs.cline.bot/mcp/mcp-overview",
+      "evidence": "Cline uses same MCP implementation across IDEs. Prompts not mentioned as supported."
+    },
+    "vscode+continue": {
+      "url": "https://blog.continue.dev/model-context-protocol/",
+      "evidence": "Prompts supported: 'Prompts map to Slash Commands in Continue'"
+    },
+    "jetbrains+continue": {
+      "url": "https://blog.continue.dev/model-context-protocol/",
+      "evidence": "Continue uses same MCP implementation across IDEs. 'Prompts map to Slash Commands.'"
+    },
+    "android-studio+continue": {
+      "url": "https://blog.continue.dev/model-context-protocol/",
+      "evidence": "Continue uses same MCP implementation across IDEs. Prompts map to Slash Commands."
+    },
+    "vscode+cody": {
+      "url": "https://sourcegraph.com/changelog/mcp-context-gathering",
+      "evidence": "Not mentioned. Changelog only confirms tools support. PulseMCP only lists resources."
+    },
+    "jetbrains+cody": {
+      "url": "https://sourcegraph.com/changelog/mcp-context-gathering",
+      "evidence": "Cody uses same MCP implementation across IDEs. Prompts not mentioned - only tools and resources supported."
+    },
+    "visual-studio+cody": {
+      "url": "https://sourcegraph.com/changelog/mcp-context-gathering",
+      "evidence": "Cody uses same MCP implementation across IDEs. Prompts not supported - only tools and resources."
+    },
+    "android-studio+cody": {
+      "url": "https://sourcegraph.com/changelog/mcp-context-gathering",
+      "evidence": "Cody uses same MCP implementation across IDEs. Prompts not supported - only tools and resources."
+    },
+    "vscode+tabnine": {
+      "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
+      "evidence": "Not mentioned in documentation."
+    },
+    "jetbrains+tabnine": {
+      "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
+      "evidence": "Tabnine uses same MCP implementation across IDEs. Prompts not mentioned in docs."
+    },
+    "visual-studio+tabnine": {
+      "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
+      "evidence": "Tabnine uses same MCP implementation across IDEs. Prompts not mentioned in docs."
+    },
+    "android-studio+tabnine": {
+      "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
+      "evidence": "Tabnine uses same MCP implementation across IDEs. Prompts not mentioned in docs."
+    },
+    "neovim+tabnine": {
+      "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
+      "evidence": "Prompts not explicitly mentioned in Tabnine MCP docs."
+    },
+    "vscode+codeium": {
+      "url": "https://codeium.com/windsurf",
+      "evidence": "No MCP support in Codeium VS Code extension. MCP is only available in Windsurf IDE, Codeium's standalone product."
+    },
+    "jetbrains+codeium": {
+      "url": "https://codeium.com/windsurf",
+      "evidence": "No MCP support in Codeium JetBrains extension. MCP is only in Windsurf IDE."
+    },
+    "neovim+codeium": {
+      "url": "https://codeium.com/windsurf",
+      "evidence": "No MCP support in Codeium Neovim plugin. MCP is only in Windsurf IDE."
+    },
+    "android-studio+codeium": {
+      "url": "https://codeium.com/windsurf",
+      "evidence": "No MCP support in Codeium Android Studio extension. MCP is only available in Windsurf IDE."
+    },
+    "vscode+amazonq": {
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html",
+      "evidence": "Prompts explicitly supported via /prompts command with argument passing: @prompt-name arg1 arg2."
+    },
+    "jetbrains+amazonq": {
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html",
+      "evidence": "Amazon Q uses same MCP implementation across IDEs. Prompts explicitly supported via /prompts command."
+    },
+    "visual-studio+amazonq": {
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html",
+      "evidence": "Amazon Q uses same MCP implementation across IDEs. Prompts explicitly supported via /prompts command."
+    },
+    "android-studio+amazonq": {
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html",
+      "evidence": "Amazon Q uses same MCP implementation across IDEs. Prompts explicitly supported via /prompts command."
+    },
+    "cursor+native": {
+      "url": "https://cursor.com/docs/context/mcp",
+      "evidence": "Prompts explicitly listed as supported: 'Templated messages and workflows for users'"
+    },
+    "windsurf+native": {
+      "url": "https://docs.windsurf.com/windsurf/cascade/mcp",
+      "evidence": "Prompts explicitly supported per documentation."
+    },
+    "zed+native": {
+      "url": "https://zed.dev/docs/ai/mcp",
+      "evidence": "Partial support - prompts show as slash commands but only single-argument prompts work: 'if you define more than one argument, it'll ignore the prompt definition without notice.' Only works in text threads, not agent threads."
+    },
+    "zed+claude-code": {
+      "url": "https://code.claude.com/docs/en/mcp",
+      "evidence": "Uses Claude Code's MCP implementation. Claude Code supports prompts."
+    },
+    "zed+codex-cli": {
+      "url": "https://developers.openai.com/codex/mcp",
+      "evidence": "Unknown - Codex CLI MCP documentation does not specify prompts support."
+    },
+    "jetbrains+native": {
+      "url": "https://www.jetbrains.com/help/ai-assistant/mcp.html",
+      "evidence": "Not mentioned in documentation. JetBrains AI Assistant MCP docs only describe tools support."
+    },
+    "neovim+avante": {
+      "url": "https://ravitemer.github.io/mcphub.nvim/extensions/avante.html",
+      "evidence": "Prompts supported: 'MCP server prompts will be available as /mcp:server_name:prompt_name in avante chat.'"
+    },
+    "neovim+codecompanion": {
+      "url": "https://ravitemer.github.io/mcphub.nvim/extensions/codecompanion.html",
+      "evidence": "Prompts supported: 'MCP prompts are available as slash commands via /mcp:prompt_name.'"
+    },
+    "neovim+amp": {
+      "url": "https://ampcode.com/manual",
+      "evidence": "Prompts support unknown in Amp MCP docs."
+    },
+    "neovim+augment": {
+      "url": "https://docs.augmentcode.com/setup-augment/mcp",
+      "evidence": "Prompts support unknown in Augment MCP docs."
+    },
+    "emacs+gptel": {
+      "url": "https://gptel.org/",
+      "evidence": "Prompts not mentioned in gptel docs."
+    },
+    "emacs+ellama": {
+      "url": "https://github.com/s-kostyaev/ellama",
+      "evidence": "Ellama does not have MCP support."
+    },
+    "claude-desktop+native": {
+      "url": "https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop",
+      "evidence": "Claude Desktop is Anthropic's native MCP implementation. Prompts fully supported."
+    },
+    "claude-code+native": {
+      "url": "https://code.claude.com/docs/en/mcp",
+      "evidence": "Claude Code supports MCP prompts per documentation."
+    },
+    "codex-cli+native": {
+      "url": "https://developers.openai.com/codex/mcp",
+      "evidence": "Codex CLI prompts support unknown per OpenAI MCP documentation."
+    },
+    "gemini-cli+native": {
+      "url": "https://geminicli.com/docs/tools/mcp-server/",
+      "evidence": "Gemini CLI supports prompts per documentation."
+    },
+    "void+native": {
+      "url": "https://voideditor.com/changelog",
+      "evidence": "MCP support status unknown - no clear documentation found for Void Editor MCP integration."
+    },
+    "pearai+native": {
+      "url": "https://pearai.app/",
+      "evidence": "MCP support status unknown - no clear documentation found for PearAI MCP integration."
+    },
+    "firebase-studio+native": {
+      "url": "https://firebase.google.com/products/studio",
+      "evidence": "MCP support status unknown - Firebase Studio is new Google product, no MCP documentation found."
+    },
+    "jules+native": {
+      "url": "https://jules.ai/",
+      "evidence": "MCP support status unknown - Jules is Google's async coding agent, no MCP documentation found."
+    },
+    "lovable+native": {
+      "url": "https://docs.lovable.dev/integrations/mcp-servers",
+      "evidence": "Lovable MCP prompts support unknown - docs focus on connectors."
+    },
+    "xcode+native": {
+      "url": "https://developer.apple.com/xcode/",
+      "evidence": "No MCP support - Xcode has no built-in MCP integration."
+    },
+    "android-studio+native": {
+      "url": "https://developer.android.com/studio/releases",
+      "evidence": "MCP support status unknown - Android Studio Gemini integration, MCP via third-party plugins."
+    },
+    "vscode+amp": {
+      "url": "https://ampcode.com/manual",
+      "evidence": "Amp MCP prompts support unknown - docs focus on tools."
+    },
+    "jetbrains+amp": {
+      "url": "https://ampcode.com/manual",
+      "evidence": "Amp MCP prompts support unknown - docs focus on tools."
+    },
+    "neovim+amp": {
+      "url": "https://ampcode.com/manual",
+      "evidence": "Amp MCP prompts support unknown - docs focus on tools."
+    },
+    "amp+native": {
+      "url": "https://ampcode.com/manual",
+      "evidence": "Amp MCP prompts support unknown - docs focus on tools."
+    },
+    "vscode+augment": {
+      "url": "https://docs.augmentcode.com/setup-augment/mcp",
+      "evidence": "Augment MCP prompts support unknown - docs focus on tools."
+    },
+    "jetbrains+augment": {
+      "url": "https://docs.augmentcode.com/setup-augment/mcp",
+      "evidence": "Augment MCP prompts support unknown - docs focus on tools."
+    },
+    "neovim+augment": {
+      "url": "https://docs.augmentcode.com/setup-augment/mcp",
+      "evidence": "Augment MCP prompts support unknown - docs focus on tools."
+    },
+    "vscode+gemini-code-assist": {
+      "url": "https://cloud.google.com/products/gemini/code-assist",
+      "evidence": "MCP support status unknown - Gemini Code Assist MCP documentation not clearly found."
+    },
+    "jetbrains+gemini-code-assist": {
+      "url": "https://cloud.google.com/products/gemini/code-assist",
+      "evidence": "MCP support status unknown - Gemini Code Assist MCP documentation not clearly found."
+    },
+    "android-studio+gemini-code-assist": {
+      "url": "https://cloud.google.com/products/gemini/code-assist",
+      "evidence": "MCP support status unknown - Gemini Code Assist MCP documentation not clearly found."
+    }
   }
 }

@@ -14,7 +14,7 @@
     "vscode+codeium": "n",
     "vscode+amazonq": "y",
     "visual-studio+github-copilot": "y",
-    "jetbrains+native": "n #1",
+    "jetbrains+native": "y #1",
     "jetbrains+github-copilot": "y",
     "jetbrains+cline": "y",
     "jetbrains+continue": "y",
@@ -58,11 +58,272 @@
     "android-studio+amazonq": "y",
     "android-studio+gemini-code-assist": "u",
     "android-studio+native": "y",
-    "xcode+native": "u",
-    "lovable+native": "y #2"
+    "xcode+native": "n",
+    "lovable+native": "y #2",
+    "vscode+amp": "y",
+    "jetbrains+amp": "y",
+    "neovim+amp": "y",
+    "vscode+augment": "y",
+    "jetbrains+augment": "y",
+    "neovim+augment": "y",
+    "amp+native": "y"
   },
   "notes": {
-    "1": "JetBrains AI Assistant only supports stdio - cannot connect to remote MCP servers",
+    "1": "JetBrains AI Assistant only supports stdio transport - workaround needed for remote MCP servers",
     "2": "Business/Enterprise plans only"
+  },
+  "sources": {
+    "vscode+github-copilot": {
+      "url": "https://code.visualstudio.com/docs/copilot/chat/mcp-servers",
+      "evidence": "Tools explicitly listed as supported: 'MCP tools work like other tools in VS Code: they can be automatically invoked when using agents or explicitly referenced in your prompts.'"
+    },
+    "visual-studio+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot MCP support applies across IDEs including Visual Studio. Tools supported per docs."
+    },
+    "jetbrains+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot MCP support applies across IDEs. Docs state tools are supported."
+    },
+    "xcode+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot MCP support applies across IDEs including Xcode. Tools supported per docs."
+    },
+    "android-studio+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot MCP support applies across IDEs including Android Studio. Tools supported per docs."
+    },
+    "neovim+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot MCP support not available for Neovim - only VS Code, Visual Studio, JetBrains, Xcode."
+    },
+    "emacs+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot MCP support not available for Emacs - only VS Code, Visual Studio, JetBrains, Xcode."
+    },
+    "vscode+cline": {
+      "url": "https://docs.cline.bot/mcp/mcp-overview",
+      "evidence": "Tools supported: 'MCP servers define a set of tools, which are functions the LLM can execute.'"
+    },
+    "jetbrains+cline": {
+      "url": "https://docs.cline.bot/mcp/mcp-overview",
+      "evidence": "Cline uses same MCP implementation across IDEs. Tools supported per docs."
+    },
+    "android-studio+cline": {
+      "url": "https://docs.cline.bot/mcp/mcp-overview",
+      "evidence": "Cline uses same MCP implementation across IDEs. Tools supported per docs."
+    },
+    "vscode+continue": {
+      "url": "https://blog.continue.dev/model-context-protocol/",
+      "evidence": "Tools supported: 'Tools map to Tools in Continue'"
+    },
+    "jetbrains+continue": {
+      "url": "https://blog.continue.dev/model-context-protocol/",
+      "evidence": "Continue uses same MCP implementation across IDEs. 'Tools map to Tools in Continue.'"
+    },
+    "android-studio+continue": {
+      "url": "https://blog.continue.dev/model-context-protocol/",
+      "evidence": "Continue uses same MCP implementation across IDEs. Tools map to Tools per docs."
+    },
+    "vscode+cody": {
+      "url": "https://sourcegraph.com/changelog/mcp-context-gathering",
+      "evidence": "Tools supported: 'Cody now supports MCP tools via its agentic context gathering, enabling automated tool use to gather and inject context directly into Cody responses.'"
+    },
+    "jetbrains+cody": {
+      "url": "https://sourcegraph.com/changelog/mcp-context-gathering",
+      "evidence": "Cody uses same MCP implementation across IDEs. Tools supported via agentic context gathering."
+    },
+    "visual-studio+cody": {
+      "url": "https://sourcegraph.com/changelog/mcp-context-gathering",
+      "evidence": "Cody uses same MCP implementation across IDEs. Tools supported via agentic context gathering."
+    },
+    "android-studio+cody": {
+      "url": "https://sourcegraph.com/changelog/mcp-context-gathering",
+      "evidence": "Cody uses same MCP implementation across IDEs. Tools supported via agentic context gathering."
+    },
+    "vscode+tabnine": {
+      "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
+      "evidence": "Tools supported: 'MCP servers act as standardized interfaces that allow language models to communicate with external applications or systems.'"
+    },
+    "jetbrains+tabnine": {
+      "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
+      "evidence": "Tabnine uses same MCP implementation across IDEs. Tools supported per docs."
+    },
+    "visual-studio+tabnine": {
+      "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
+      "evidence": "Tabnine Agent MCP support works across IDEs including Visual Studio. Tools supported per docs."
+    },
+    "android-studio+tabnine": {
+      "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
+      "evidence": "Tabnine Agent MCP support works across IDEs including Android Studio. Tools supported per docs."
+    },
+    "neovim+tabnine": {
+      "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
+      "evidence": "Tabnine MCP support applies across IDEs. Tools supported per docs."
+    },
+    "vscode+codeium": {
+      "url": "https://codeium.com/windsurf",
+      "evidence": "No MCP support in Codeium VS Code extension. MCP is only available in Windsurf IDE, Codeium's standalone product."
+    },
+    "jetbrains+codeium": {
+      "url": "https://codeium.com/windsurf",
+      "evidence": "No MCP support in Codeium JetBrains extension. MCP is only in Windsurf IDE."
+    },
+    "neovim+codeium": {
+      "url": "https://codeium.com/windsurf",
+      "evidence": "No MCP support in Codeium Neovim plugin. MCP is only in Windsurf IDE."
+    },
+    "android-studio+codeium": {
+      "url": "https://codeium.com/windsurf",
+      "evidence": "No MCP support in Codeium Android Studio extension. MCP is only available in Windsurf IDE."
+    },
+    "vscode+amazonq": {
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html",
+      "evidence": "Tools explicitly supported with permission levels (auto-approved, requires approval, dangerous) and discovery via /tools command."
+    },
+    "jetbrains+amazonq": {
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html",
+      "evidence": "Amazon Q uses same MCP implementation across IDEs. Tools explicitly supported."
+    },
+    "visual-studio+amazonq": {
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html",
+      "evidence": "Amazon Q uses same MCP implementation across IDEs. Tools explicitly supported."
+    },
+    "android-studio+amazonq": {
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html",
+      "evidence": "Amazon Q uses same MCP implementation across IDEs. Tools explicitly supported."
+    },
+    "cursor+native": {
+      "url": "https://cursor.com/docs/context/mcp",
+      "evidence": "Tools explicitly listed as supported: 'Functions for the AI model to execute'"
+    },
+    "windsurf+native": {
+      "url": "https://docs.windsurf.com/windsurf/cascade/mcp",
+      "evidence": "Tools explicitly supported per documentation and verified by multiple sources."
+    },
+    "zed+native": {
+      "url": "https://zed.dev/docs/ai/mcp",
+      "evidence": "Tools explicitly supported - documentation focuses on 'tools coming from MCP servers' with configuration in custom profiles."
+    },
+    "zed+claude-code": {
+      "url": "https://code.claude.com/docs/en/mcp",
+      "evidence": "Uses Claude Code's MCP implementation. Claude Code supports tools."
+    },
+    "zed+codex-cli": {
+      "url": "https://developers.openai.com/codex/mcp",
+      "evidence": "Would use Codex CLI's MCP implementation - Codex CLI supports tools per OpenAI docs."
+    },
+    "jetbrains+native": {
+      "url": "https://www.jetbrains.com/help/ai-assistant/mcp.html",
+      "evidence": "Tools supported via stdio: 'AI Assistant can interact with external tools and data sources via the Model Context Protocol (MCP). By connecting to MCP servers, AI Assistant gains access to a range of tools.'"
+    },
+    "neovim+avante": {
+      "url": "https://ravitemer.github.io/mcphub.nvim/extensions/avante.html",
+      "evidence": "Tools supported via mcp_tool() function adding use_mcp_tool capability."
+    },
+    "neovim+codecompanion": {
+      "url": "https://ravitemer.github.io/mcphub.nvim/extensions/codecompanion.html",
+      "evidence": "Tools supported with 'Flexible Tool Access' - multiple ways from broad @mcp access to granular individual tools."
+    },
+    "neovim+amp": {
+      "url": "https://ampcode.com/manual",
+      "evidence": "Amp MCP support applies across IDEs including Neovim. Tools supported."
+    },
+    "neovim+augment": {
+      "url": "https://docs.augmentcode.com/setup-augment/mcp",
+      "evidence": "Augment MCP support applies across IDEs including Neovim. Tools supported."
+    },
+    "emacs+gptel": {
+      "url": "https://gptel.org/",
+      "evidence": "gptel supports MCP tools. Per docs: gptel is a multi-LLM client with MCP support."
+    },
+    "emacs+ellama": {
+      "url": "https://github.com/s-kostyaev/ellama",
+      "evidence": "Ellama does not have MCP support per GitHub repository review."
+    },
+    "claude-desktop+native": {
+      "url": "https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop",
+      "evidence": "Claude Desktop is Anthropic's native MCP implementation. Tools fully supported."
+    },
+    "claude-code+native": {
+      "url": "https://code.claude.com/docs/en/mcp",
+      "evidence": "Claude Code supports MCP tools for development workflows. Per PulseMCP: 'Enables tool discovery and execution.'"
+    },
+    "codex-cli+native": {
+      "url": "https://developers.openai.com/codex/mcp",
+      "evidence": "Codex CLI supports MCP tools per OpenAI documentation."
+    },
+    "gemini-cli+native": {
+      "url": "https://geminicli.com/docs/tools/mcp-server/",
+      "evidence": "Gemini CLI supports MCP tools per documentation."
+    },
+    "void+native": {
+      "url": "https://voideditor.com/changelog",
+      "evidence": "MCP support status unknown - no clear documentation found for Void Editor MCP integration."
+    },
+    "pearai+native": {
+      "url": "https://pearai.app/",
+      "evidence": "MCP support status unknown - no clear documentation found for PearAI MCP integration."
+    },
+    "firebase-studio+native": {
+      "url": "https://firebase.google.com/products/studio",
+      "evidence": "MCP support status unknown - Firebase Studio is new Google product, no MCP documentation found yet."
+    },
+    "jules+native": {
+      "url": "https://jules.ai/",
+      "evidence": "MCP support status unknown - Jules is Google's async coding agent, no MCP documentation found."
+    },
+    "lovable+native": {
+      "url": "https://docs.lovable.dev/integrations/mcp-servers",
+      "evidence": "Lovable supports MCP tools on Business/Enterprise plans with prebuilt connectors."
+    },
+    "xcode+native": {
+      "url": "https://developer.apple.com/xcode/",
+      "evidence": "No MCP support - Xcode has no built-in MCP integration, only third-party plugins like GitHub Copilot."
+    },
+    "android-studio+native": {
+      "url": "https://developer.android.com/studio/releases",
+      "evidence": "Android Studio has Gemini integration but MCP support comes via third-party plugins or Gemini Code Assist."
+    },
+    "vscode+amp": {
+      "url": "https://ampcode.com/manual",
+      "evidence": "Amp supports MCP tools per documentation."
+    },
+    "jetbrains+amp": {
+      "url": "https://ampcode.com/manual",
+      "evidence": "Amp supports MCP tools per documentation."
+    },
+    "neovim+amp": {
+      "url": "https://ampcode.com/manual",
+      "evidence": "Amp MCP support applies across IDEs including Neovim. Tools supported."
+    },
+    "amp+native": {
+      "url": "https://ampcode.com/manual",
+      "evidence": "Amp supports MCP tools per documentation."
+    },
+    "vscode+augment": {
+      "url": "https://docs.augmentcode.com/setup-augment/mcp",
+      "evidence": "Augment supports MCP tools per documentation."
+    },
+    "jetbrains+augment": {
+      "url": "https://docs.augmentcode.com/setup-augment/mcp",
+      "evidence": "Augment supports MCP tools per documentation."
+    },
+    "neovim+augment": {
+      "url": "https://docs.augmentcode.com/setup-augment/mcp",
+      "evidence": "Augment MCP support applies across IDEs including Neovim. Tools supported."
+    },
+    "vscode+gemini-code-assist": {
+      "url": "https://cloud.google.com/products/gemini/code-assist",
+      "evidence": "MCP support status unknown - Gemini Code Assist MCP documentation not clearly found."
+    },
+    "jetbrains+gemini-code-assist": {
+      "url": "https://cloud.google.com/products/gemini/code-assist",
+      "evidence": "MCP support status unknown - Gemini Code Assist MCP documentation not clearly found."
+    },
+    "android-studio+gemini-code-assist": {
+      "url": "https://cloud.google.com/products/gemini/code-assist",
+      "evidence": "MCP support status unknown - Gemini Code Assist MCP documentation not clearly found."
+    }
   }
 }

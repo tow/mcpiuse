@@ -41,7 +41,7 @@
     "vscode+gemini-code-assist": "u",
     "jetbrains+gemini-code-assist": "u",
     "firebase-studio+native": "u",
-    "gemini-cli+native": "y",
+    "gemini-cli+native": "n",
     "jules+native": "u",
     "zed+claude-code": "y",
     "zed+codex-cli": "u",
@@ -58,11 +58,272 @@
     "android-studio+amazonq": "n",
     "android-studio+gemini-code-assist": "u",
     "android-studio+native": "u",
-    "xcode+native": "u",
-    "lovable+native": "u"
+    "xcode+native": "n",
+    "lovable+native": "u",
+    "vscode+amp": "u",
+    "jetbrains+amp": "u",
+    "neovim+amp": "u",
+    "vscode+augment": "u",
+    "jetbrains+augment": "u",
+    "neovim+augment": "u",
+    "amp+native": "u"
   },
   "notes": {
     "1": "JetBrains AI Assistant only supports stdio - cannot connect to remote MCP servers",
     "2": "New in June 2025 spec - client support still rolling out"
+  },
+  "sources": {
+    "vscode+github-copilot": {
+      "url": "https://code.visualstudio.com/docs/copilot/chat/mcp-servers",
+      "evidence": "Elicitation explicitly listed in the MCP supported features section of the documentation."
+    },
+    "visual-studio+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot MCP support applies across IDEs including Visual Studio. Elicitation mentioned in VS Code docs."
+    },
+    "jetbrains+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot MCP support applies across IDEs. Elicitation mentioned in VS Code docs."
+    },
+    "xcode+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot Xcode elicitation - support status unknown."
+    },
+    "android-studio+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot MCP support applies across IDEs including Android Studio. Elicitation mentioned in VS Code docs."
+    },
+    "neovim+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot MCP support not available for Neovim."
+    },
+    "emacs+github-copilot": {
+      "url": "https://docs.github.com/en/copilot/concepts/context/mcp",
+      "evidence": "GitHub Copilot MCP support not available for Emacs."
+    },
+    "vscode+cline": {
+      "url": "https://docs.cline.bot/mcp/mcp-overview",
+      "evidence": "Not mentioned in documentation. Docs only list tools, resources, and prompts as supported MCP features."
+    },
+    "jetbrains+cline": {
+      "url": "https://docs.cline.bot/mcp/mcp-overview",
+      "evidence": "Cline uses same MCP implementation across IDEs. Elicitation not mentioned in docs."
+    },
+    "android-studio+cline": {
+      "url": "https://docs.cline.bot/mcp/mcp-overview",
+      "evidence": "Cline uses same MCP implementation across IDEs. Elicitation not mentioned in docs."
+    },
+    "vscode+continue": {
+      "url": "https://blog.continue.dev/model-context-protocol/",
+      "evidence": "Not mentioned in documentation. Only tools, resources, prompts discussed. Sampling explicitly unsupported."
+    },
+    "jetbrains+continue": {
+      "url": "https://blog.continue.dev/model-context-protocol/",
+      "evidence": "Continue uses same MCP implementation across IDEs. Elicitation not mentioned in docs."
+    },
+    "android-studio+continue": {
+      "url": "https://blog.continue.dev/model-context-protocol/",
+      "evidence": "Continue uses same MCP implementation across IDEs. Elicitation not mentioned in docs."
+    },
+    "vscode+cody": {
+      "url": "https://sourcegraph.com/changelog/mcp-context-gathering",
+      "evidence": "Not mentioned. Changelog only confirms tools support. PulseMCP only lists resources."
+    },
+    "jetbrains+cody": {
+      "url": "https://sourcegraph.com/changelog/mcp-context-gathering",
+      "evidence": "Cody uses same MCP implementation across IDEs. Elicitation not mentioned in docs."
+    },
+    "visual-studio+cody": {
+      "url": "https://sourcegraph.com/changelog/mcp-context-gathering",
+      "evidence": "Cody uses same MCP implementation across IDEs. Elicitation not mentioned in docs."
+    },
+    "android-studio+cody": {
+      "url": "https://sourcegraph.com/changelog/mcp-context-gathering",
+      "evidence": "Cody uses same MCP implementation across IDEs. Elicitation not mentioned in docs."
+    },
+    "vscode+tabnine": {
+      "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
+      "evidence": "Not mentioned in documentation."
+    },
+    "jetbrains+tabnine": {
+      "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
+      "evidence": "Tabnine uses same MCP implementation across IDEs. Elicitation not mentioned in docs."
+    },
+    "visual-studio+tabnine": {
+      "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
+      "evidence": "Tabnine uses same MCP implementation across IDEs. Elicitation not mentioned in docs."
+    },
+    "android-studio+tabnine": {
+      "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
+      "evidence": "Tabnine uses same MCP implementation across IDEs. Elicitation not mentioned in docs."
+    },
+    "neovim+tabnine": {
+      "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
+      "evidence": "Elicitation not mentioned in Tabnine MCP docs."
+    },
+    "vscode+codeium": {
+      "url": "https://codeium.com/windsurf",
+      "evidence": "No MCP support in Codeium VS Code extension. MCP is only available in Windsurf IDE, Codeium's standalone product."
+    },
+    "jetbrains+codeium": {
+      "url": "https://codeium.com/windsurf",
+      "evidence": "No MCP support in Codeium JetBrains extension. MCP is only in Windsurf IDE."
+    },
+    "neovim+codeium": {
+      "url": "https://codeium.com/windsurf",
+      "evidence": "No MCP support in Codeium Neovim plugin. MCP is only in Windsurf IDE."
+    },
+    "android-studio+codeium": {
+      "url": "https://codeium.com/windsurf",
+      "evidence": "No MCP support in Codeium Android Studio extension. MCP is only available in Windsurf IDE."
+    },
+    "vscode+amazonq": {
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html",
+      "evidence": "Not mentioned in documentation. Docs only cover tools, prompts, and resources."
+    },
+    "jetbrains+amazonq": {
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html",
+      "evidence": "Amazon Q uses same MCP implementation across IDEs. Elicitation not mentioned in docs."
+    },
+    "visual-studio+amazonq": {
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html",
+      "evidence": "Amazon Q uses same MCP implementation across IDEs. Elicitation not mentioned in docs."
+    },
+    "android-studio+amazonq": {
+      "url": "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/qdev-mcp.html",
+      "evidence": "Amazon Q uses same MCP implementation across IDEs. Elicitation not mentioned in docs."
+    },
+    "cursor+native": {
+      "url": "https://cursor.com/docs/context/mcp",
+      "evidence": "Elicitation explicitly listed as supported: 'Server-initiated requests for additional information from users'"
+    },
+    "windsurf+native": {
+      "url": "https://docs.windsurf.com/windsurf/cascade/mcp",
+      "evidence": "Elicitation not supported per Frontend Masters course: 'Windsurf supports resources, prompts and tools, but does not support sampling, roots or elicitation.'"
+    },
+    "zed+native": {
+      "url": "https://zed.dev/docs/ai/mcp",
+      "evidence": "Not mentioned in documentation. Zed MCP support focuses on tools with partial prompts support."
+    },
+    "zed+claude-code": {
+      "url": "https://code.claude.com/docs/en/mcp",
+      "evidence": "Uses Claude Code's MCP implementation. Claude Code supports elicitation via AskUserQuestion tool."
+    },
+    "zed+codex-cli": {
+      "url": "https://developers.openai.com/codex/mcp",
+      "evidence": "Unknown - Codex CLI MCP documentation does not specify elicitation support."
+    },
+    "jetbrains+native": {
+      "url": "https://www.jetbrains.com/help/ai-assistant/mcp.html",
+      "evidence": "Not mentioned in documentation. JetBrains AI Assistant MCP docs only describe tools support."
+    },
+    "neovim+avante": {
+      "url": "https://ravitemer.github.io/mcphub.nvim/extensions/avante.html",
+      "evidence": "Not mentioned in documentation. Only tools, resources, and prompts discussed."
+    },
+    "neovim+codecompanion": {
+      "url": "https://ravitemer.github.io/mcphub.nvim/extensions/codecompanion.html",
+      "evidence": "Not mentioned. Docs only cover tools, resources, and prompts."
+    },
+    "neovim+amp": {
+      "url": "https://ampcode.com/manual",
+      "evidence": "Elicitation support unknown in Amp MCP docs."
+    },
+    "neovim+augment": {
+      "url": "https://docs.augmentcode.com/setup-augment/mcp",
+      "evidence": "Elicitation support unknown in Augment MCP docs."
+    },
+    "emacs+gptel": {
+      "url": "https://gptel.org/",
+      "evidence": "Elicitation not mentioned in gptel docs."
+    },
+    "emacs+ellama": {
+      "url": "https://github.com/s-kostyaev/ellama",
+      "evidence": "Ellama does not have MCP support."
+    },
+    "claude-desktop+native": {
+      "url": "https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop",
+      "evidence": "Claude Desktop is Anthropic's native MCP implementation. Elicitation supported."
+    },
+    "claude-code+native": {
+      "url": "https://code.claude.com/docs/en/mcp",
+      "evidence": "Claude Code elicitation not supported - uses AskUserQuestion tool instead of MCP elicitation."
+    },
+    "codex-cli+native": {
+      "url": "https://developers.openai.com/codex/mcp",
+      "evidence": "Codex CLI elicitation support unknown per OpenAI MCP documentation."
+    },
+    "gemini-cli+native": {
+      "url": "https://geminicli.com/docs/tools/mcp-server/",
+      "evidence": "Gemini CLI does not support elicitation per documentation."
+    },
+    "void+native": {
+      "url": "https://voideditor.com/changelog",
+      "evidence": "MCP support status unknown - no clear documentation found for Void Editor MCP integration."
+    },
+    "pearai+native": {
+      "url": "https://pearai.app/",
+      "evidence": "MCP support status unknown - no clear documentation found for PearAI MCP integration."
+    },
+    "firebase-studio+native": {
+      "url": "https://firebase.google.com/products/studio",
+      "evidence": "MCP support status unknown - Firebase Studio is new Google product, no MCP documentation found."
+    },
+    "jules+native": {
+      "url": "https://jules.ai/",
+      "evidence": "MCP support status unknown - Jules is Google's async coding agent, no MCP documentation found."
+    },
+    "lovable+native": {
+      "url": "https://docs.lovable.dev/integrations/mcp-servers",
+      "evidence": "Lovable MCP elicitation support unknown - docs focus on connectors."
+    },
+    "xcode+native": {
+      "url": "https://developer.apple.com/xcode/",
+      "evidence": "No MCP support - Xcode has no built-in MCP integration."
+    },
+    "android-studio+native": {
+      "url": "https://developer.android.com/studio/releases",
+      "evidence": "MCP support status unknown - Android Studio Gemini integration, MCP via third-party plugins."
+    },
+    "vscode+amp": {
+      "url": "https://ampcode.com/manual",
+      "evidence": "Amp MCP elicitation support unknown - docs focus on tools."
+    },
+    "jetbrains+amp": {
+      "url": "https://ampcode.com/manual",
+      "evidence": "Amp MCP elicitation support unknown - docs focus on tools."
+    },
+    "neovim+amp": {
+      "url": "https://ampcode.com/manual",
+      "evidence": "Amp MCP elicitation support unknown - docs focus on tools."
+    },
+    "amp+native": {
+      "url": "https://ampcode.com/manual",
+      "evidence": "Amp MCP elicitation support unknown - docs focus on tools."
+    },
+    "vscode+augment": {
+      "url": "https://docs.augmentcode.com/setup-augment/mcp",
+      "evidence": "Augment MCP elicitation support unknown - docs focus on tools."
+    },
+    "jetbrains+augment": {
+      "url": "https://docs.augmentcode.com/setup-augment/mcp",
+      "evidence": "Augment MCP elicitation support unknown - docs focus on tools."
+    },
+    "neovim+augment": {
+      "url": "https://docs.augmentcode.com/setup-augment/mcp",
+      "evidence": "Augment MCP elicitation support unknown - docs focus on tools."
+    },
+    "vscode+gemini-code-assist": {
+      "url": "https://cloud.google.com/products/gemini/code-assist",
+      "evidence": "MCP support status unknown - Gemini Code Assist MCP documentation not clearly found."
+    },
+    "jetbrains+gemini-code-assist": {
+      "url": "https://cloud.google.com/products/gemini/code-assist",
+      "evidence": "MCP support status unknown - Gemini Code Assist MCP documentation not clearly found."
+    },
+    "android-studio+gemini-code-assist": {
+      "url": "https://cloud.google.com/products/gemini/code-assist",
+      "evidence": "MCP support status unknown - Gemini Code Assist MCP documentation not clearly found."
+    }
   }
 }
