@@ -449,18 +449,40 @@ function showSourceModal(element) {
         noteEl.style.display = 'none';
     }
 
+    // Try to get evidence from feature sources directly as fallback
+    let evidence = sourceEvidence;
+    if (!evidence && featureId && comboKey) {
+        const feature = features[featureId];
+        if (feature && feature.sources && feature.sources[comboKey]) {
+            const src = feature.sources[comboKey];
+            if (typeof src === 'object' && src.evidence) {
+                evidence = src.evidence;
+            }
+        }
+    }
+
     const evidenceEl = modal.querySelector('.source-modal-evidence');
-    if (sourceEvidence) {
-        evidenceEl.innerHTML = `<strong>Evidence:</strong> ${escapeHtml(sourceEvidence)}`;
+    if (evidence) {
+        evidenceEl.innerHTML = `<strong>Evidence:</strong> ${escapeHtml(evidence)}`;
         evidenceEl.style.display = 'block';
     } else {
         evidenceEl.style.display = 'none';
     }
 
     const linkEl = modal.querySelector('.source-modal-link');
-    if (sourceUrl) {
+    // Try to get URL from feature sources directly as fallback
+    let url = sourceUrl;
+    if (!url && featureId && comboKey) {
+        const feature = features[featureId];
+        if (feature && feature.sources && feature.sources[comboKey]) {
+            const src = feature.sources[comboKey];
+            url = typeof src === 'string' ? src : src.url;
+        }
+    }
+
+    if (url) {
         // Decode any HTML entities that might have been escaped
-        const decodedUrl = sourceUrl.replace(/&amp;/g, '&');
+        const decodedUrl = url.replace(/&amp;/g, '&');
         linkEl.innerHTML = `
             <a href="${decodedUrl}" target="_blank" rel="noopener" class="source-button">View Source Documentation &rarr;</a>
             <div class="source-url">${escapeHtml(decodedUrl)}</div>
