@@ -459,10 +459,15 @@ function showSourceModal(element) {
 
     const linkEl = modal.querySelector('.source-modal-link');
     if (sourceUrl) {
-        linkEl.innerHTML = `<a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener">View Source &rarr;</a>`;
+        // Decode any HTML entities that might have been escaped
+        const decodedUrl = sourceUrl.replace(/&amp;/g, '&');
+        linkEl.innerHTML = `
+            <a href="${decodedUrl}" target="_blank" rel="noopener" class="source-button">View Source Documentation &rarr;</a>
+            <div class="source-url">${escapeHtml(decodedUrl)}</div>
+        `;
         linkEl.style.display = 'block';
     } else {
-        linkEl.innerHTML = '<em>No source available</em>';
+        linkEl.innerHTML = '<em>No source URL available</em>';
         linkEl.style.display = 'block';
     }
 

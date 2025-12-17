@@ -778,7 +778,7 @@ footer p {
     margin-top: 1rem;
 }
 
-.source-modal-link a {
+.source-modal-link a.source-button {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -792,10 +792,23 @@ footer p {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.source-modal-link a:hover {
+.source-modal-link a.source-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 209, 102, 0.3);
     text-decoration: none;
+}
+
+.source-modal-link .source-url {
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    word-break: break-all;
+    user-select: all;
+    cursor: text;
 }
 
 .source-modal-link em {
