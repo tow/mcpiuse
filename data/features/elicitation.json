@@ -43,7 +43,7 @@
     "firebase-studio+native": "n",
     "gemini-cli+native": "n",
     "jules+native": "n",
-    "zed+claude-code": "y",
+    "zed+claude-code": "n",
     "zed+codex-cli": "n",
     "neovim+github-copilot": "n",
     "emacs+github-copilot": "n",
@@ -207,7 +207,7 @@
     },
     "zed+claude-code": {
       "url": "https://code.claude.com/docs/en/mcp",
-      "evidence": "Uses Claude Code's MCP implementation. Claude Code supports elicitation via AskUserQuestion tool."
+      "evidence": "Uses Claude Code's MCP implementation. Claude Code does not support MCP elicitation protocol."
     },
     "zed+codex-cli": {
       "url": "https://developers.openai.com/codex/mcp",
