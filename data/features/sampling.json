@@ -17,56 +17,56 @@
     "windsurf+native": "n",
     "claude-desktop+native": "y",
     "claude-code+native": "y",
-    "codex-cli+native": "u",
+    "codex-cli+native": "n",
     "vscode+continue": "n",
     "vscode+cody": "n",
-    "vscode+tabnine": "u",
+    "vscode+tabnine": "n",
     "vscode+codeium": "n",
     "vscode+amazonq": "n",
     "jetbrains+github-copilot": "y",
     "jetbrains+continue": "n",
     "jetbrains+cody": "n",
-    "jetbrains+tabnine": "u",
+    "jetbrains+tabnine": "n",
     "jetbrains+codeium": "n",
     "jetbrains+amazonq": "n",
     "zed+native": "n",
     "neovim+avante": "n",
     "neovim+codecompanion": "n",
     "neovim+codeium": "n",
-    "neovim+tabnine": "u",
+    "neovim+tabnine": "n",
     "emacs+gptel": "n",
     "emacs+ellama": "n",
-    "void+native": "u",
-    "pearai+native": "u",
-    "vscode+gemini-code-assist": "u",
-    "jetbrains+gemini-code-assist": "u",
-    "firebase-studio+native": "u",
+    "void+native": "n",
+    "pearai+native": "n",
+    "vscode+gemini-code-assist": "n",
+    "jetbrains+gemini-code-assist": "n",
+    "firebase-studio+native": "n",
     "gemini-cli+native": "n",
-    "jules+native": "u",
+    "jules+native": "n",
     "zed+claude-code": "y",
-    "zed+codex-cli": "u",
+    "zed+codex-cli": "n",
     "neovim+github-copilot": "n",
     "emacs+github-copilot": "n",
     "visual-studio+cody": "n",
-    "visual-studio+tabnine": "u",
+    "visual-studio+tabnine": "n",
     "visual-studio+amazonq": "n",
     "android-studio+github-copilot": "y",
     "android-studio+continue": "n",
     "android-studio+cody": "n",
-    "android-studio+tabnine": "u",
+    "android-studio+tabnine": "n",
     "android-studio+codeium": "n",
     "android-studio+amazonq": "n",
-    "android-studio+gemini-code-assist": "u",
-    "android-studio+native": "u",
+    "android-studio+gemini-code-assist": "n",
+    "android-studio+native": "n",
     "xcode+native": "n",
-    "lovable+native": "u",
-    "vscode+amp": "u",
-    "jetbrains+amp": "u",
-    "neovim+amp": "u",
-    "vscode+augment": "u",
-    "jetbrains+augment": "u",
-    "neovim+augment": "u",
-    "amp+native": "u"
+    "lovable+native": "n",
+    "vscode+amp": "n",
+    "jetbrains+amp": "n",
+    "neovim+amp": "n",
+    "vscode+augment": "n",
+    "jetbrains+augment": "n",
+    "neovim+augment": "n",
+    "amp+native": "n"
   },
   "notes": {
     "1": "JetBrains AI Assistant only supports stdio - cannot connect to remote MCP servers"
@@ -142,7 +142,7 @@
     },
     "vscode+tabnine": {
       "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
-      "evidence": "Not mentioned in documentation."
+      "evidence": "Sampling NOT supported. Tabnine MCP only supports tools - sampling not mentioned in docs."
     },
     "jetbrains+tabnine": {
       "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
@@ -250,31 +250,31 @@
     },
     "codex-cli+native": {
       "url": "https://developers.openai.com/codex/mcp",
-      "evidence": "Codex CLI sampling support unknown per OpenAI MCP documentation."
+      "evidence": "Sampling NOT supported. Codex CLI MCP docs list 'Supported MCP features' as tools only."
     },
     "gemini-cli+native": {
       "url": "https://geminicli.com/docs/tools/mcp-server/",
       "evidence": "Gemini CLI does not support sampling per documentation."
     },
     "void+native": {
-      "url": "https://voideditor.com/changelog",
-      "evidence": "MCP support status unknown - no clear documentation found for Void Editor MCP integration."
+      "url": "https://deepwiki.com/voideditor/void/3.6-model-context-protocol-(mcp)-service",
+      "evidence": "Sampling NOT supported. Void MCP only supports tools - sampling not mentioned in docs."
     },
     "pearai+native": {
-      "url": "https://pearai.app/",
-      "evidence": "MCP support status unknown - no clear documentation found for PearAI MCP integration."
+      "url": "https://blog.continue.dev/model-context-protocol/",
+      "evidence": "Sampling NOT supported. PearAI is a Continue fork. Continue explicitly states sampling is 'currently unsupported.'"
     },
     "firebase-studio+native": {
-      "url": "https://firebase.google.com/products/studio",
-      "evidence": "MCP support status unknown - Firebase Studio is new Google product, no MCP documentation found."
+      "url": "https://firebase.google.com/docs/studio/mcp-servers",
+      "evidence": "Sampling explicitly NOT supported. Docs state: 'Prompts, sampling, or other resources provided by MCP servers' are not supported."
     },
     "jules+native": {
-      "url": "https://jules.ai/",
-      "evidence": "MCP support status unknown - Jules is Google's async coding agent, no MCP documentation found."
+      "url": "https://jules.google/docs/",
+      "evidence": "No MCP client support. Jules is an async coding agent, not an MCP client."
     },
     "lovable+native": {
-      "url": "https://docs.lovable.dev/integrations/mcp-servers",
-      "evidence": "Lovable MCP sampling support unknown - docs focus on connectors."
+      "url": "https://lovable.dev/blog/mcp-servers",
+      "evidence": "Sampling NOT supported. Lovable MCP only supports tools."
     },
     "xcode+native": {
       "url": "https://developer.apple.com/xcode/",

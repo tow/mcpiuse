@@ -33,18 +33,18 @@
     "neovim+tabnine": "y",
     "emacs+gptel": "y",
     "emacs+ellama": "n",
-    "void+native": "u",
-    "pearai+native": "u",
+    "void+native": "y",
+    "pearai+native": "y",
     "claude-desktop+native": "y",
     "claude-code+native": "y",
     "codex-cli+native": "y",
-    "vscode+gemini-code-assist": "u",
-    "jetbrains+gemini-code-assist": "u",
-    "firebase-studio+native": "u",
+    "vscode+gemini-code-assist": "y",
+    "jetbrains+gemini-code-assist": "n",
+    "firebase-studio+native": "y",
     "gemini-cli+native": "y",
-    "jules+native": "u",
+    "jules+native": "n",
     "zed+claude-code": "y",
-    "zed+codex-cli": "u",
+    "zed+codex-cli": "y",
     "neovim+github-copilot": "n",
     "emacs+github-copilot": "n",
     "visual-studio+cody": "y",
@@ -56,7 +56,7 @@
     "android-studio+tabnine": "y",
     "android-studio+codeium": "n",
     "android-studio+amazonq": "y",
-    "android-studio+gemini-code-assist": "u",
+    "android-studio+gemini-code-assist": "n",
     "android-studio+native": "y",
     "xcode+native": "n",
     "lovable+native": "y #2",
@@ -211,7 +211,7 @@
     },
     "zed+codex-cli": {
       "url": "https://developers.openai.com/codex/mcp",
-      "evidence": "Would use Codex CLI's MCP implementation - Codex CLI supports tools per OpenAI docs."
+      "evidence": "Tools supported. Uses Codex CLI's MCP implementation. OpenAI docs: 'MCP servers are supported by both the Codex CLI and the Codex IDE extension.'"
     },
     "jetbrains+native": {
       "url": "https://www.jetbrains.com/help/ai-assistant/mcp.html",
@@ -258,20 +258,20 @@
       "evidence": "Gemini CLI supports MCP tools per documentation."
     },
     "void+native": {
-      "url": "https://voideditor.com/changelog",
-      "evidence": "MCP support status unknown - no clear documentation found for Void Editor MCP integration."
+      "url": "https://deepwiki.com/voideditor/void/3.6-model-context-protocol-(mcp)-service",
+      "evidence": "Tools supported. DeepWiki docs: 'Agent mode can search, create, edit, and delete files & folders. It also has terminal access and MCP tool access.'"
     },
     "pearai+native": {
-      "url": "https://pearai.app/",
-      "evidence": "MCP support status unknown - no clear documentation found for PearAI MCP integration."
+      "url": "https://github.com/trypear/pearai-app",
+      "evidence": "Tools supported. PearAI is a fork of Continue which supports MCP tools. PearAI submodule inherits Continue's MCP implementation."
     },
     "firebase-studio+native": {
-      "url": "https://firebase.google.com/products/studio",
-      "evidence": "MCP support status unknown - Firebase Studio is new Google product, no MCP documentation found yet."
+      "url": "https://firebase.google.com/docs/studio/mcp-servers",
+      "evidence": "Tools supported: 'Tools provided by MCP servers' explicitly listed as supported feature."
     },
     "jules+native": {
-      "url": "https://jules.ai/",
-      "evidence": "MCP support status unknown - Jules is Google's async coding agent, no MCP documentation found."
+      "url": "https://jules.google/docs/",
+      "evidence": "No native MCP client support. Jules is an async coding agent that doesn't consume MCP servers. Third-party MCP servers exist FOR Jules, but Jules itself is not an MCP client."
     },
     "lovable+native": {
       "url": "https://docs.lovable.dev/integrations/mcp-servers",
@@ -314,16 +314,16 @@
       "evidence": "Augment MCP support applies across IDEs including Neovim. Tools supported."
     },
     "vscode+gemini-code-assist": {
-      "url": "https://cloud.google.com/products/gemini/code-assist",
-      "evidence": "MCP support status unknown - Gemini Code Assist MCP documentation not clearly found."
+      "url": "https://developers.google.com/gemini-code-assist/docs/use-agentic-chat-pair-programmer",
+      "evidence": "Tools supported in agent mode: 'Model Context Protocol (MCP) servers and their executable functions' listed as available tools."
     },
     "jetbrains+gemini-code-assist": {
-      "url": "https://cloud.google.com/products/gemini/code-assist",
-      "evidence": "MCP support status unknown - Gemini Code Assist MCP documentation not clearly found."
+      "url": "https://developers.google.com/gemini-code-assist/resources/release-notes",
+      "evidence": "MCP server support is NOT supported in Gemini Code Assist for IntelliJ or other JetBrains IDEs per Google documentation."
     },
     "android-studio+gemini-code-assist": {
-      "url": "https://cloud.google.com/products/gemini/code-assist",
-      "evidence": "MCP support status unknown - Gemini Code Assist MCP documentation not clearly found."
+      "url": "https://developers.google.com/gemini-code-assist/resources/release-notes",
+      "evidence": "MCP server support is NOT supported in Android Studio (JetBrains-based IDE) per Google documentation."
     }
   }
 }

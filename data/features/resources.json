@@ -20,53 +20,53 @@
     "codex-cli+native": "y",
     "vscode+continue": "y",
     "vscode+cody": "y",
-    "vscode+tabnine": "u",
+    "vscode+tabnine": "n",
     "vscode+codeium": "n",
     "vscode+amazonq": "y",
     "jetbrains+github-copilot": "y",
     "jetbrains+continue": "y",
     "jetbrains+cody": "y",
-    "jetbrains+tabnine": "u",
+    "jetbrains+tabnine": "n",
     "jetbrains+codeium": "n",
-    "jetbrains+amazonq": "u",
+    "jetbrains+amazonq": "y",
     "zed+native": "n",
     "neovim+avante": "y",
     "neovim+codecompanion": "y",
     "neovim+codeium": "n",
-    "neovim+tabnine": "u",
+    "neovim+tabnine": "n",
     "emacs+gptel": "n",
     "emacs+ellama": "n",
-    "void+native": "u",
-    "pearai+native": "u",
-    "vscode+gemini-code-assist": "u",
-    "jetbrains+gemini-code-assist": "u",
-    "firebase-studio+native": "u",
+    "void+native": "n",
+    "pearai+native": "y",
+    "vscode+gemini-code-assist": "n",
+    "jetbrains+gemini-code-assist": "n",
+    "firebase-studio+native": "n",
     "gemini-cli+native": "a #2",
-    "jules+native": "u",
+    "jules+native": "n",
     "zed+claude-code": "y",
-    "zed+codex-cli": "u",
+    "zed+codex-cli": "n",
     "neovim+github-copilot": "n",
     "emacs+github-copilot": "n",
     "visual-studio+cody": "y",
-    "visual-studio+tabnine": "u",
-    "visual-studio+amazonq": "u",
+    "visual-studio+tabnine": "n",
+    "visual-studio+amazonq": "y",
     "android-studio+github-copilot": "y",
     "android-studio+continue": "y",
     "android-studio+cody": "y",
-    "android-studio+tabnine": "u",
+    "android-studio+tabnine": "n",
     "android-studio+codeium": "n",
-    "android-studio+amazonq": "u",
-    "android-studio+gemini-code-assist": "u",
-    "android-studio+native": "u",
+    "android-studio+amazonq": "y",
+    "android-studio+gemini-code-assist": "n",
+    "android-studio+native": "n",
     "xcode+native": "n",
-    "lovable+native": "u",
-    "vscode+amp": "u",
-    "jetbrains+amp": "u",
-    "neovim+amp": "u",
-    "vscode+augment": "u",
-    "jetbrains+augment": "u",
-    "neovim+augment": "u",
-    "amp+native": "u"
+    "lovable+native": "n",
+    "vscode+amp": "n",
+    "jetbrains+amp": "n",
+    "neovim+amp": "n",
+    "vscode+augment": "n",
+    "jetbrains+augment": "n",
+    "neovim+augment": "n",
+    "amp+native": "n"
   },
   "notes": {
     "1": "Resources partially supported - implementation unclear",
@@ -143,23 +143,23 @@
     },
     "vscode+tabnine": {
       "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
-      "evidence": "Not explicitly mentioned. Docs describe tools and data sources but don't specifically reference MCP resources capability."
+      "evidence": "Resources NOT supported. Exhaustive search of Tabnine MCP docs found no mention of MCP resources - only tools for external integrations."
     },
     "jetbrains+tabnine": {
       "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
-      "evidence": "Tabnine uses same MCP implementation across IDEs. Resources not explicitly mentioned in docs."
+      "evidence": "Resources NOT supported. Tabnine MCP implementation across IDEs only supports tools, not resources."
     },
     "visual-studio+tabnine": {
       "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
-      "evidence": "Tabnine uses same MCP implementation across IDEs. Resources not explicitly mentioned in docs."
+      "evidence": "Resources NOT supported. Tabnine MCP implementation only supports tools."
     },
     "android-studio+tabnine": {
       "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
-      "evidence": "Tabnine uses same MCP implementation across IDEs. Resources not explicitly mentioned in docs."
+      "evidence": "Resources NOT supported. Tabnine MCP implementation only supports tools."
     },
     "neovim+tabnine": {
       "url": "https://docs.tabnine.com/main/getting-started/tabnine-agent/mcp-intro-and-setup",
-      "evidence": "Resources not explicitly mentioned in Tabnine MCP docs."
+      "evidence": "Resources NOT supported. Tabnine MCP implementation only supports tools."
     },
     "vscode+codeium": {
       "url": "https://codeium.com/windsurf",
@@ -211,7 +211,7 @@
     },
     "zed+codex-cli": {
       "url": "https://developers.openai.com/codex/mcp",
-      "evidence": "Unknown - Codex CLI MCP documentation does not specify resources support."
+      "evidence": "Resources NOT supported. Codex CLI MCP docs list 'Supported MCP features' as tools only - resources not mentioned."
     },
     "jetbrains+native": {
       "url": "https://www.jetbrains.com/help/ai-assistant/mcp.html",
@@ -258,24 +258,24 @@
       "evidence": "Gemini CLI has partial resources support - tool execution is primary focus."
     },
     "void+native": {
-      "url": "https://voideditor.com/changelog",
-      "evidence": "MCP support status unknown - no clear documentation found for Void Editor MCP integration."
+      "url": "https://deepwiki.com/voideditor/void/3.6-model-context-protocol-(mcp)-service",
+      "evidence": "Resources NOT supported. Void MCP docs focus only on 'MCP tool access' - no mention of resources after searching GitHub issues and DeepWiki docs."
     },
     "pearai+native": {
-      "url": "https://pearai.app/",
-      "evidence": "MCP support status unknown - no clear documentation found for PearAI MCP integration."
+      "url": "https://github.com/trypear/pearai-app",
+      "evidence": "Resources supported. PearAI is a fork of Continue, which supports MCP resources: 'Resources map to Context Providers in Continue.'"
     },
     "firebase-studio+native": {
-      "url": "https://firebase.google.com/products/studio",
-      "evidence": "MCP support status unknown - Firebase Studio is new Google product, no MCP documentation found."
+      "url": "https://firebase.google.com/docs/studio/mcp-servers",
+      "evidence": "Resources explicitly NOT supported. Docs state: 'Prompts, sampling, or other resources provided by MCP servers' are not supported."
     },
     "jules+native": {
-      "url": "https://jules.ai/",
-      "evidence": "MCP support status unknown - Jules is Google's async coding agent, no MCP documentation found."
+      "url": "https://jules.google/docs/",
+      "evidence": "No MCP client support. Jules is an async coding agent that doesn't consume MCP servers as a client."
     },
     "lovable+native": {
-      "url": "https://docs.lovable.dev/integrations/mcp-servers",
-      "evidence": "Lovable MCP resources support unknown - docs focus on connectors, not explicit resources support."
+      "url": "https://lovable.dev/blog/mcp-servers",
+      "evidence": "Resources NOT supported. Lovable MCP integration focuses only on tools: 'MCP servers provide tools that extend functionality.'"
     },
     "xcode+native": {
       "url": "https://developer.apple.com/xcode/",
@@ -283,47 +283,47 @@
     },
     "android-studio+native": {
       "url": "https://developer.android.com/studio/releases",
-      "evidence": "MCP support status unknown - Android Studio Gemini integration, MCP via third-party plugins."
+      "evidence": "No native MCP support. Android Studio has Gemini integration but no built-in MCP client. MCP only via third-party plugins."
     },
     "vscode+amp": {
       "url": "https://ampcode.com/manual",
-      "evidence": "Amp MCP resources support unknown - docs focus on tools."
+      "evidence": "Resources NOT supported. Exhaustive search of Amp docs found only tools mentioned - MCP skills bundle tools, not resources."
     },
     "jetbrains+amp": {
       "url": "https://ampcode.com/manual",
-      "evidence": "Amp MCP resources support unknown - docs focus on tools."
+      "evidence": "Resources NOT supported. Amp MCP implementation focuses only on tools."
     },
     "neovim+amp": {
       "url": "https://ampcode.com/manual",
-      "evidence": "Amp MCP resources support unknown - docs focus on tools."
+      "evidence": "Resources NOT supported. Amp MCP implementation focuses only on tools."
     },
     "amp+native": {
       "url": "https://ampcode.com/manual",
-      "evidence": "Amp MCP resources support unknown - docs focus on tools."
+      "evidence": "Resources NOT supported. Amp MCP documentation and mcp-availability.com confirm tools-focused implementation."
     },
     "vscode+augment": {
       "url": "https://docs.augmentcode.com/setup-augment/mcp",
-      "evidence": "Augment MCP resources support unknown - docs focus on tools."
+      "evidence": "Resources NOT supported. Augment MCP docs focus on 'access external systems for information and integrate tools to take actions' - tools only."
     },
     "jetbrains+augment": {
       "url": "https://docs.augmentcode.com/setup-augment/mcp",
-      "evidence": "Augment MCP resources support unknown - docs focus on tools."
+      "evidence": "Resources NOT supported. Augment MCP implementation focuses only on tools."
     },
     "neovim+augment": {
       "url": "https://docs.augmentcode.com/setup-augment/mcp",
-      "evidence": "Augment MCP resources support unknown - docs focus on tools."
+      "evidence": "Resources NOT supported. Augment MCP implementation focuses only on tools."
     },
     "vscode+gemini-code-assist": {
-      "url": "https://cloud.google.com/products/gemini/code-assist",
-      "evidence": "MCP support status unknown - Gemini Code Assist MCP documentation not clearly found."
+      "url": "https://developers.google.com/gemini-code-assist/docs/use-agentic-chat-pair-programmer",
+      "evidence": "Resources NOT supported. Agent mode docs only mention 'MCP servers and their executable functions' - tools only."
     },
     "jetbrains+gemini-code-assist": {
-      "url": "https://cloud.google.com/products/gemini/code-assist",
-      "evidence": "MCP support status unknown - Gemini Code Assist MCP documentation not clearly found."
+      "url": "https://developers.google.com/gemini-code-assist/resources/release-notes",
+      "evidence": "No MCP support. MCP server support is NOT supported in Gemini Code Assist for JetBrains IDEs."
     },
     "android-studio+gemini-code-assist": {
-      "url": "https://cloud.google.com/products/gemini/code-assist",
-      "evidence": "MCP support status unknown - Gemini Code Assist MCP documentation not clearly found."
+      "url": "https://developers.google.com/gemini-code-assist/resources/release-notes",
+      "evidence": "No MCP support. MCP server support is NOT supported in Android Studio (JetBrains-based)."
     }
   }
 }
