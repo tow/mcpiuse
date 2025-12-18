@@ -13,6 +13,19 @@
       ]
     },
     {
+      "date": "2025-09-18",
+      "type": "client",
+      "client": "vscode+cody",
+      "title": "Cody v6.8 adds Sourcegraph MCP Server for Enterprise",
+      "description": "The Sourcegraph Model Context Protocol Server is now available for Enterprise plans.",
+      "links": [
+        {
+          "title": "Changelog",
+          "url": "https://sourcegraph.com/changelog"
+        }
+      ]
+    },
+    {
       "date": "2025-08-14",
       "type": "client",
       "client": "xcode+github-copilot",
@@ -22,6 +35,32 @@
         {
           "title": "Changelog",
           "url": "https://github.com/github/CopilotForXcode/blob/main/CHANGELOG.md"
+        }
+      ]
+    },
+    {
+      "date": "2025-08-13",
+      "type": "client",
+      "client": "jetbrains+github-copilot",
+      "title": "GitHub Copilot MCP support for JetBrains reaches GA",
+      "description": "Model Context Protocol support for GitHub Copilot in JetBrains IDEs is now generally available.",
+      "links": [
+        {
+          "title": "Announcement",
+          "url": "https://github.blog/changelog/2025-08-13-model-context-protocol-mcp-support-for-jetbrains-eclipse-and-xcode-is-now-generally-available/"
+        }
+      ]
+    },
+    {
+      "date": "2025-08-04",
+      "type": "client",
+      "client": "jetbrains+native",
+      "title": "JetBrains 2025.2 adds built-in MCP server",
+      "description": "IntelliJ IDEA 2025.2 includes a built-in MCP server, allowing external clients like Claude Desktop and Cursor to access IDE tools.",
+      "links": [
+        {
+          "title": "Release Notes",
+          "url": "https://blog.jetbrains.com/idea/2025/08/intellij-idea-2025-2/"
         }
       ]
     },
@@ -77,6 +116,45 @@
       ]
     },
     {
+      "date": "2025-06-04",
+      "type": "client",
+      "client": "cursor+native",
+      "title": "Cursor 1.0 adds one-click MCP setup",
+      "description": "Cursor 1.0 release brings one-click MCP server installation with OAuth support and a curated list of official MCP servers.",
+      "links": [
+        {
+          "title": "Changelog",
+          "url": "https://cursor.com/changelog/1-0"
+        }
+      ]
+    },
+    {
+      "date": "2025-05-28",
+      "type": "client",
+      "client": "vscode+cody",
+      "title": "Cody v6.4 adds MCP tools in agentic context gathering",
+      "description": "Cody can now invoke locally configured MCP tools automatically during agentic context gathering.",
+      "links": [
+        {
+          "title": "Changelog",
+          "url": "https://sourcegraph.com/changelog/mcp-context-gathering"
+        }
+      ]
+    },
+    {
+      "date": "2025-05-19",
+      "type": "client",
+      "client": "jetbrains+github-copilot",
+      "title": "GitHub Copilot MCP support for JetBrains in public preview",
+      "description": "Agent mode and MCP support for GitHub Copilot in JetBrains IDEs enters public preview.",
+      "links": [
+        {
+          "title": "Announcement",
+          "url": "https://github.blog/changelog/2025-05-19-agent-mode-and-mcp-support-for-copilot-in-jetbrains-eclipse-and-xcode-now-in-public-preview/"
+        }
+      ]
+    },
+    {
       "date": "2025-05-19",
       "type": "client",
       "client": "xcode+github-copilot",
@@ -103,6 +181,32 @@
       ]
     },
     {
+      "date": "2025-04-29",
+      "type": "client",
+      "client": "vscode+amazonq",
+      "title": "Amazon Q Developer CLI adds MCP support",
+      "description": "Amazon Q Developer CLI now supports Model Context Protocol, enabling developers to extend Q's capabilities with external tools and data sources.",
+      "links": [
+        {
+          "title": "Announcement",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2025/04/amazon-q-developer-cli-model-context-protocol/"
+        }
+      ]
+    },
+    {
+      "date": "2025-04-16",
+      "type": "client",
+      "client": "jetbrains+native",
+      "title": "JetBrains 2025.1 adds MCP client support",
+      "description": "IntelliJ IDEA 2025.1 introduces full MCP client support in AI Assistant, allowing connection to external MCP servers.",
+      "links": [
+        {
+          "title": "Blog Post",
+          "url": "https://blog.jetbrains.com/idea/2025/05/intellij-idea-2025-1-model-context-protocol/"
+        }
+      ]
+    },
+    {
       "date": "2025-04-04",
       "type": "client",
       "client": "vscode+github-copilot",
@@ -124,6 +228,19 @@
         {
           "title": "Specification",
           "url": "https://modelcontextprotocol.io/specification/2025-03-26"
+        }
+      ]
+    },
+    {
+      "date": "2025-02-13",
+      "type": "client",
+      "client": "windsurf+native",
+      "title": "Windsurf Wave 3 adds MCP support",
+      "description": "Codeium's Windsurf IDE introduces MCP support in Wave 3 release, allowing Cascade to access external data sources through MCP servers.",
+      "links": [
+        {
+          "title": "Blog Post",
+          "url": "https://windsurf.com/blog/windsurf-wave-3"
         }
       ]
     },
@@ -163,6 +280,58 @@
         {
           "title": "Release",
           "url": "https://github.com/cline/cline/releases/tag/v3.0.0"
+        }
+      ]
+    },
+    {
+      "date": "2024-12-09",
+      "type": "client",
+      "client": "jetbrains+native",
+      "title": "JetBrains releases MCP proxy server",
+      "description": "JetBrains releases mcp-jetbrains, a TypeScript-based proxy server for connecting AI assistants to JetBrains IDEs via MCP.",
+      "links": [
+        {
+          "title": "Repository",
+          "url": "https://github.com/JetBrains/mcp-jetbrains"
+        }
+      ]
+    },
+    {
+      "date": "2024-12-05",
+      "type": "client",
+      "client": "vscode+continue",
+      "title": "Continue adds MCP support",
+      "description": "Continue becomes one of the first clients to offer full support for all MCP features including resources, prompts, and tools.",
+      "links": [
+        {
+          "title": "Blog Post",
+          "url": "https://blog.continue.dev/model-context-protocol/"
+        }
+      ]
+    },
+    {
+      "date": "2024-11-26",
+      "type": "client",
+      "client": "zed+native",
+      "title": "Zed adds MCP support via extensions",
+      "description": "Zed extensions can now source AI Assistant context via standardized MCP servers, initially supporting prompts via slash commands.",
+      "links": [
+        {
+          "title": "Blog Post",
+          "url": "https://zed.dev/blog/mcp"
+        }
+      ]
+    },
+    {
+      "date": "2024-11-25",
+      "type": "client",
+      "client": "vscode+cody",
+      "title": "Sourcegraph Cody adds MCP support",
+      "description": "Cody becomes one of the first tools to support MCP, enabling integration with external data sources through OpenCtx.",
+      "links": [
+        {
+          "title": "Blog Post",
+          "url": "https://sourcegraph.com/blog/cody-supports-anthropic-model-context-protocol"
         }
       ]
     },
