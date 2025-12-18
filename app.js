@@ -216,7 +216,7 @@ function renderPluginsMatrix() {
         const nativeClient = aiClients['native'];
         const nativeName = nativeClient?.native_names?.[ide.id];
         const nativeNoteAttr = nativeName ? ` data-note="${escapeHtml(nativeName)}"` : '';
-        const nativeOnclick = nativeName ? ` onclick="toggleNote(this)"` : '';
+        const nativeOnclick = nativeName ? ` onclick="toggleNote(this, event)"` : '';
         html += `<td class="support-cell"><span class="support-icon ${hasNative ? 'support-y' : 'support-n'}"${nativeNoteAttr}${nativeOnclick}>${hasNative ? '&#10003;' : '&#10005;'}</span></td>`;
 
         // Plugin columns
@@ -239,7 +239,7 @@ function renderPluginsMatrix() {
         for (const ide of nativeOnly) {
             const nativeName = nativeClient?.native_names?.[ide.id];
             const noteAttr = nativeName ? ` data-note="${escapeHtml(nativeName)}"` : '';
-            const noteOnclick = nativeName ? ` onclick="toggleNote(this)"` : '';
+            const noteOnclick = nativeName ? ` onclick="toggleNote(this, event)"` : '';
             html += `<tr><td class="feature-cell">${escapeHtml(ide.name)}</td>`;
             html += `<td class="support-cell"><span class="support-icon support-y"${noteAttr}${noteOnclick}>&#10003;</span></td></tr>`;
         }
@@ -475,8 +475,8 @@ function closeSourceModal() {
 }
 
 // Toggle note tooltip visibility (for click on plugin availability cells)
-function toggleNote(element) {
-    event.stopPropagation();
+function toggleNote(element, evt) {
+    if (evt) evt.stopPropagation();
     // Remove show-note from all other elements
     document.querySelectorAll('.support-icon.show-note').forEach(el => {
         if (el !== element) el.classList.remove('show-note');
