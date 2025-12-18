@@ -12,18 +12,18 @@
     "jetbrains+native": "n #1",
     "jetbrains+cline": "n",
     "android-studio+cline": "n",
-    "xcode+github-copilot": "n",
+    "xcode+github-copilot": "u",
     "cursor+native": "y",
     "windsurf+native": "n",
     "claude-desktop+native": "y",
     "claude-code+native": "a #2",
-    "codex-cli+native": "n",
+    "codex-cli+native": "u",
     "vscode+continue": "n",
     "vscode+cody": "n",
     "vscode+tabnine": "n",
     "vscode+codeium": "n",
     "vscode+amazonq": "n",
-    "jetbrains+github-copilot": "n",
+    "jetbrains+github-copilot": "u",
     "jetbrains+continue": "n",
     "jetbrains+cody": "n",
     "jetbrains+tabnine": "n",
@@ -36,37 +36,37 @@
     "neovim+tabnine": "n",
     "emacs+gptel": "n",
     "emacs+ellama": "n",
-    "void+native": "n",
-    "pearai+native": "n",
-    "vscode+gemini-code-assist": "n",
-    "jetbrains+gemini-code-assist": "n",
-    "firebase-studio+native": "n",
+    "void+native": "u",
+    "pearai+native": "u",
+    "vscode+gemini-code-assist": "u",
+    "jetbrains+gemini-code-assist": "u",
+    "firebase-studio+native": "u",
     "gemini-cli+native": "n",
-    "jules+native": "n",
+    "jules+native": "u",
     "zed+claude-code": "y",
-    "zed+codex-cli": "n",
+    "zed+codex-cli": "u",
     "neovim+github-copilot": "n",
     "emacs+github-copilot": "n",
     "visual-studio+cody": "n",
     "visual-studio+tabnine": "n",
     "visual-studio+amazonq": "n",
-    "android-studio+github-copilot": "n",
+    "android-studio+github-copilot": "u",
     "android-studio+continue": "n",
     "android-studio+cody": "n",
     "android-studio+tabnine": "n",
     "android-studio+codeium": "n",
     "android-studio+amazonq": "n",
-    "android-studio+gemini-code-assist": "n",
-    "android-studio+native": "n",
+    "android-studio+gemini-code-assist": "u",
+    "android-studio+native": "u",
     "xcode+native": "n",
-    "lovable+native": "n",
-    "vscode+amp": "n",
-    "jetbrains+amp": "n",
-    "neovim+amp": "n",
-    "vscode+augment": "n",
-    "jetbrains+augment": "n",
-    "neovim+augment": "n",
-    "amp+native": "n"
+    "lovable+native": "u",
+    "vscode+amp": "u",
+    "jetbrains+amp": "u",
+    "neovim+amp": "u",
+    "vscode+augment": "u",
+    "jetbrains+augment": "u",
+    "neovim+augment": "u",
+    "amp+native": "u"
   },
   "notes": {
     "1": "JetBrains AI Assistant only supports stdio - cannot connect to remote MCP servers",
@@ -227,11 +227,11 @@
     },
     "neovim+amp": {
       "url": "https://ampcode.com/manual",
-      "evidence": "Roots support unknown in Amp MCP docs."
+      "evidence": "Amp MCP roots support unknown - docs focus on tools."
     },
     "neovim+augment": {
       "url": "https://docs.augmentcode.com/setup-augment/mcp",
-      "evidence": "Roots support unknown in Augment MCP docs."
+      "evidence": "Augment MCP roots support unknown - docs focus on tools."
     },
     "emacs+gptel": {
       "url": "https://gptel.org/",
@@ -293,10 +293,6 @@
       "url": "https://ampcode.com/manual",
       "evidence": "Amp MCP roots support unknown - docs focus on tools."
     },
-    "neovim+amp": {
-      "url": "https://ampcode.com/manual",
-      "evidence": "Amp MCP roots support unknown - docs focus on tools."
-    },
     "amp+native": {
       "url": "https://ampcode.com/manual",
       "evidence": "Amp MCP roots support unknown - docs focus on tools."
@@ -306,10 +302,6 @@
       "evidence": "Augment MCP roots support unknown - docs focus on tools."
     },
     "jetbrains+augment": {
-      "url": "https://docs.augmentcode.com/setup-augment/mcp",
-      "evidence": "Augment MCP roots support unknown - docs focus on tools."
-    },
-    "neovim+augment": {
       "url": "https://docs.augmentcode.com/setup-augment/mcp",
       "evidence": "Augment MCP roots support unknown - docs focus on tools."
     },

@@ -38,13 +38,13 @@
     "emacs+ellama": "n",
     "void+native": "n",
     "pearai+native": "n",
-    "vscode+gemini-code-assist": "n",
-    "jetbrains+gemini-code-assist": "n",
+    "vscode+gemini-code-assist": "u",
+    "jetbrains+gemini-code-assist": "u",
     "firebase-studio+native": "n",
     "gemini-cli+native": "n",
     "jules+native": "n",
     "zed+claude-code": "y",
-    "zed+codex-cli": "n",
+    "zed+codex-cli": "u",
     "neovim+github-copilot": "n",
     "emacs+github-copilot": "n",
     "visual-studio+cody": "n",
@@ -56,17 +56,17 @@
     "android-studio+tabnine": "n",
     "android-studio+codeium": "n",
     "android-studio+amazonq": "n",
-    "android-studio+gemini-code-assist": "n",
-    "android-studio+native": "n",
+    "android-studio+gemini-code-assist": "u",
+    "android-studio+native": "u",
     "xcode+native": "n",
     "lovable+native": "n",
-    "vscode+amp": "n",
-    "jetbrains+amp": "n",
-    "neovim+amp": "n",
-    "vscode+augment": "n",
-    "jetbrains+augment": "n",
-    "neovim+augment": "n",
-    "amp+native": "n"
+    "vscode+amp": "u",
+    "jetbrains+amp": "u",
+    "neovim+amp": "u",
+    "vscode+augment": "u",
+    "jetbrains+augment": "u",
+    "neovim+augment": "u",
+    "amp+native": "u"
   },
   "notes": {
     "1": "JetBrains AI Assistant only supports stdio - cannot connect to remote MCP servers"
@@ -226,11 +226,11 @@
     },
     "neovim+amp": {
       "url": "https://ampcode.com/manual",
-      "evidence": "Sampling support unknown in Amp MCP docs."
+      "evidence": "Amp MCP sampling support unknown - docs focus on tools."
     },
     "neovim+augment": {
       "url": "https://docs.augmentcode.com/setup-augment/mcp",
-      "evidence": "Sampling support unknown in Augment MCP docs."
+      "evidence": "Augment MCP sampling support unknown - docs focus on tools."
     },
     "emacs+gptel": {
       "url": "https://gptel.org/",
@@ -292,10 +292,6 @@
       "url": "https://ampcode.com/manual",
       "evidence": "Amp MCP sampling support unknown - docs focus on tools."
     },
-    "neovim+amp": {
-      "url": "https://ampcode.com/manual",
-      "evidence": "Amp MCP sampling support unknown - docs focus on tools."
-    },
     "amp+native": {
       "url": "https://ampcode.com/manual",
       "evidence": "Amp MCP sampling support unknown - docs focus on tools."
@@ -305,10 +301,6 @@
       "evidence": "Augment MCP sampling support unknown - docs focus on tools."
     },
     "jetbrains+augment": {
-      "url": "https://docs.augmentcode.com/setup-augment/mcp",
-      "evidence": "Augment MCP sampling support unknown - docs focus on tools."
-    },
-    "neovim+augment": {
       "url": "https://docs.augmentcode.com/setup-augment/mcp",
       "evidence": "Augment MCP sampling support unknown - docs focus on tools."
     },
