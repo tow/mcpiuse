@@ -542,6 +542,13 @@ footer p {
     margin-bottom: 1rem;
 }
 
+.table-note {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: 0.75rem;
+    font-style: italic;
+}
+
 .native-only-list {
     display: flex;
     flex-wrap: wrap;
