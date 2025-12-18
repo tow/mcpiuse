@@ -1,0 +1,14 @@
+{
+  "id": "amp",
+  "name": "Amp CLI",
+  "vendor": "Sourcegraph",
+  "category": "cli",
+  "website": "https://ampcode.com",
+  "mcp_docs": "https://ampcode.com/manual",
+  "config_paths": [],
+  "min_mcp_version": null,
+  "compatible_ai_clients": ["native"],
+  "notes": {
+    "1": "Agentic coding CLI from Sourcegraph"
+  }
+}

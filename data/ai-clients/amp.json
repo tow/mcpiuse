@@ -1,0 +1,11 @@
+{
+  "id": "amp",
+  "name": "Amp",
+  "vendor": "Sourcegraph",
+  "category": "ai-client",
+  "website": "https://sourcegraph.com/amp",
+  "mcp_docs": "https://ampcode.com/manual",
+  "notes": {
+    "1": "Agentic coding tool from Sourcegraph with cross-IDE support"
+  }
+}

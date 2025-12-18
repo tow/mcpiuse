@@ -1,0 +1,11 @@
+{
+  "id": "augment",
+  "name": "Augment Code",
+  "vendor": "Augment",
+  "category": "ai-client",
+  "website": "https://www.augmentcode.com",
+  "mcp_docs": "https://docs.augmentcode.com/setup-augment/mcp",
+  "notes": {
+    "1": "Easy MCP feature for one-click integrations (July 2025)"
+  }
+}
