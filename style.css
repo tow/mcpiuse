@@ -361,7 +361,7 @@ section h2 {
 }
 
 .matrix-table td.support-cell .support-icon {
-    cursor: help;
+    cursor: pointer;
     width: 24px;
     height: 24px;
     border-radius: 6px;

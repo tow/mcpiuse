@@ -216,8 +216,7 @@ function renderPluginsMatrix() {
         const nativeClient = aiClients['native'];
         const nativeName = nativeClient?.native_names?.[ide.id];
         const nativeNoteAttr = nativeName ? ` data-note="${escapeHtml(nativeName)}"` : '';
-        const nativeOnclick = nativeName ? ` onclick="toggleNote(this, event)"` : '';
-        html += `<td class="support-cell"><span class="support-icon ${hasNative ? 'support-y' : 'support-n'}"${nativeNoteAttr}${nativeOnclick}>${hasNative ? '&#10003;' : '&#10005;'}</span></td>`;
+        html += `<td class="support-cell"><span class="support-icon ${hasNative ? 'support-y' : 'support-n'}"${nativeNoteAttr}>${hasNative ? '&#10003;' : '&#10005;'}</span></td>`;
 
         // Plugin columns
         for (const clientId of sortedPluginClients) {
@@ -239,9 +238,8 @@ function renderPluginsMatrix() {
         for (const ide of nativeOnly) {
             const nativeName = nativeClient?.native_names?.[ide.id];
             const noteAttr = nativeName ? ` data-note="${escapeHtml(nativeName)}"` : '';
-            const noteOnclick = nativeName ? ` onclick="toggleNote(this, event)"` : '';
             html += `<tr><td class="feature-cell">${escapeHtml(ide.name)}</td>`;
-            html += `<td class="support-cell"><span class="support-icon support-y"${noteAttr}${noteOnclick}>&#10003;</span></td></tr>`;
+            html += `<td class="support-cell"><span class="support-icon support-y"${noteAttr}>&#10003;</span></td></tr>`;
         }
         html += '</tbody></table>';
     }
@@ -474,22 +472,25 @@ function closeSourceModal() {
     }
 }
 
-// Toggle note tooltip visibility (for click on plugin availability cells)
-function toggleNote(element, evt) {
-    if (evt) evt.stopPropagation();
-    // Remove show-note from all other elements
-    document.querySelectorAll('.support-icon.show-note').forEach(el => {
-        if (el !== element) el.classList.remove('show-note');
-    });
-    // Toggle on clicked element
-    element.classList.toggle('show-note');
-}
+// Handle clicks on plugin availability cells with notes (event delegation)
+document.addEventListener('click', (e) => {
+    // Check if clicked element is a support icon with a note in the plugins matrix
+    const icon = e.target.closest('#plugins-matrix .support-icon[data-note]');
 
-// Close note tooltips when clicking elsewhere
-document.addEventListener('click', () => {
-    document.querySelectorAll('.support-icon.show-note').forEach(el => {
-        el.classList.remove('show-note');
-    });
+    if (icon) {
+        e.stopPropagation();
+        // Remove show-note from all other elements
+        document.querySelectorAll('.support-icon.show-note').forEach(el => {
+            if (el !== icon) el.classList.remove('show-note');
+        });
+        // Toggle on clicked element
+        icon.classList.toggle('show-note');
+    } else {
+        // Clicked elsewhere - close all note tooltips
+        document.querySelectorAll('.support-icon.show-note').forEach(el => {
+            el.classList.remove('show-note');
+        });
+    }
 });
 
 // Render changelog
